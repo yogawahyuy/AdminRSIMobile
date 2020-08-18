@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Admin RSI Moblie</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string-array name="status">
+        <item>Praktik</item>
+        <item>Cuti</item>
+    </string-array>
 </resources>

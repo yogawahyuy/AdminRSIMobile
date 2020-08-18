@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "348696960174",
+    "firebase_url": "https://rsi-mobile.firebaseio.com",
+    "project_id": "rsi-mobile",
+    "storage_bucket": "rsi-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348696960174:android:47505d1793f6bfe701a13f",
+        "android_client_info": {
+          "package_name": "com.rsip.adminrsimoblie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348696960174-b4tcn109vda57289kfu0ar3duahguto3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rsip.adminrsimoblie",
+            "certificate_hash": "4f005fce1e2880169cd2887221cc4f0bcf1b4ee7"
+          }
+        },
+        {
+          "client_id": "348696960174-i3ndn8a1saiffh4vgcmlf69ce44g26lf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4RxeqHqUMg15zqaf4RjRCF5lnEJ4Gm6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348696960174-i3ndn8a1saiffh4vgcmlf69ce44g26lf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
