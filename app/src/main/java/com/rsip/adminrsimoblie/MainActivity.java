@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.rsip.adminrsimoblie.RecyclerView.ListKeluhanActivity;
+import com.rsip.adminrsimoblie.View.DaftarKeluhanActivity;
 import com.rsip.adminrsimoblie.View.InfoDokterActivity;
 import com.rsip.adminrsimoblie.View.LoginActivity;
 import com.rsip.adminrsimoblie.View.MenuInfoDokterActivity;
@@ -41,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, InfoDokterActivity.class));
+            }
+        });
+        cardViewKeluhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ListKeluhanActivity.class));
             }
         });
     }

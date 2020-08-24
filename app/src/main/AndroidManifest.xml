@@ -15,7 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.EditDokterActivity"></activity>
+        <activity
+            android:name=".RecyclerView.ListKeluhanActivity"
+            android:label="Keluhan"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".View.DaftarKeluhanActivity" />
+        <activity android:name=".View.EditDokterActivity" />
         <activity android:name=".View.DetailDokterActivity" />
         <activity android:name=".View.TambahDokterActivity" />
         <activity

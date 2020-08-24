@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -65,6 +66,7 @@ public class TambahDokterActivity extends AppCompatActivity {
     TextView textTitle;
     int maxid;
     private final int PICK_IMAGE_REQUEST = 22;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -184,7 +186,7 @@ public class TambahDokterActivity extends AppCompatActivity {
         }
         Log.d("checkbox", "getDataFromCheckbox: "+data);
         if (TextUtils.isEmpty(nameDokter)||TextUtils.isEmpty(spesial)||TextUtils.isEmpty(jam)||TextUtils.isEmpty(keterangans)||TextUtils.isEmpty(data)||filePath==null){
-            Toast.makeText(this, "Data Harus Diisi", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Data atau foto Harus Diisi", Toast.LENGTH_SHORT).show();
         }else {
             addDataIntoFirebase(id, nameDokter, spesial, data, jam, statusdokter, keterangans);
         }
@@ -210,6 +212,7 @@ public class TambahDokterActivity extends AppCompatActivity {
 
     }
     private void uploadIntoFirebaseStorage(String id){
+        progresDialog();
         if (filePath!=null){
             profilePhoto.setDrawingCacheEnabled(true);
             profilePhoto.buildDrawingCache();
@@ -224,7 +227,7 @@ public class TambahDokterActivity extends AppCompatActivity {
             uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    //progressBar.setVisibility(View.GONE);
+                    progressDialog.dismiss();
                     Toast.makeText(TambahDokterActivity.this, "Uploading Berhasil", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(TambahDokterActivity.this,InfoDokterActivity.class));
                     finish();
@@ -233,14 +236,13 @@ public class TambahDokterActivity extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-
+                    progressDialog.dismiss();
                     Toast.makeText(TambahDokterActivity.this, "Uploading Gagal", Toast.LENGTH_SHORT).show();
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
-
-
+                    
                 }
             });
         }else{
@@ -305,5 +307,13 @@ public class TambahDokterActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    private void progresDialog(){
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Sedang Menambahkan Info Dokter");
+        progressDialog.setIndeterminate(false);
+        progressDialog.setCanceledOnTouchOutside(true);
+        progressDialog.setCancelable(true);
+        progressDialog.show();
     }
 }
