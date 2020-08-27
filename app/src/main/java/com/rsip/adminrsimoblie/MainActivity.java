@@ -12,10 +12,8 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.rsip.adminrsimoblie.RecyclerView.ListKeluhanActivity;
-import com.rsip.adminrsimoblie.View.DaftarKeluhanActivity;
 import com.rsip.adminrsimoblie.View.InfoDokterActivity;
 import com.rsip.adminrsimoblie.View.LoginActivity;
-import com.rsip.adminrsimoblie.View.MenuInfoDokterActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button logout;

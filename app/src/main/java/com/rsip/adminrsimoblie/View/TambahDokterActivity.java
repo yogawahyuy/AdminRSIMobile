@@ -46,6 +46,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import id.zelory.compressor.Compressor;
 
 public class TambahDokterActivity extends AppCompatActivity {
 
@@ -218,7 +219,7 @@ public class TambahDokterActivity extends AppCompatActivity {
             profilePhoto.buildDrawingCache();
             Bitmap bitmaps=((BitmapDrawable) profilePhoto.getDrawable()).getBitmap();
             ByteArrayOutputStream baos=new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG,25,baos);
             byte[] bytes=baos.toByteArray();
             String namafile=id+".jpg";
             String namafolder="ProfilePicture/"+namafile;
@@ -248,6 +249,7 @@ public class TambahDokterActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "Foto Harus diIsi", Toast.LENGTH_SHORT).show();
         }
+        //Compressor compressor=new Compressor(this).compressToFile()
     }
 
     private void intentTambahJam(){
@@ -307,6 +309,7 @@ public class TambahDokterActivity extends AppCompatActivity {
                 finish();
             }
         });
+
     }
     private void progresDialog(){
         progressDialog=new ProgressDialog(this);
@@ -316,4 +319,6 @@ public class TambahDokterActivity extends AppCompatActivity {
         progressDialog.setCancelable(true);
         progressDialog.show();
     }
+
+
 }
