@@ -3,6 +3,7 @@ package com.rsip.adminrsimoblie.RecyclerView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,7 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rsip.adminrsimoblie.R;
+import com.rsip.adminrsimoblie.View.RincianKeluhanActivity;
 
+import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.os.Handler;
@@ -54,8 +57,25 @@ public class ListKeluhanActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         unitSpinner=findViewById(R.id.spiner_unit);
 
+        unitSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
+    private void spinerData(int pos){
+        switch (pos){
+            case 0:
+
+        }
+    }
 
     private void setAdapter() {
 
@@ -102,6 +122,20 @@ public class ListKeluhanActivity extends AppCompatActivity {
                 //handle item click events here
                 //Toast.makeText(ListKeluhanActivity.this, "Hey " + model.getTitle(), Toast.LENGTH_SHORT).show();
 
+            Intent intent=new Intent(ListKeluhanActivity.this,RincianKeluhanActivity.class);
+            intent.putExtra("key",modelList.get(position).getKey());
+            intent.putExtra("nama",modelList.get(position).getNama());
+            intent.putExtra("tanggal",modelList.get(position).getTanggal());
+            intent.putExtra("kategori",modelList.get(position).getKategori());
+            intent.putExtra("ruangan",modelList.get(position).getUnit());
+            intent.putExtra("keluhan",modelList.get(position).getKeluhan());
+            intent.putExtra("balasan",modelList.get(position).getPesanBalasan());
+            intent.putExtra("sender",modelList.get(position).getSender());
+            intent.putExtra("status",modelList.get(position).getStatusBalas());
+            intent.putExtra("idpembalas",modelList.get(position).getIdPembalas());
+
+            startActivity(intent);
+            finish();
 
             }
         });
@@ -116,12 +150,7 @@ public class ListKeluhanActivity extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     KeluhanModel keluhanModel=dataSnapshot.getValue(KeluhanModel.class);
                     keluhanModel.setKey(dataSnapshot.getKey());
-                    if (keluhanModel.getUnit().equals(unitSpinner.getSelectedItem().toString())){
-                        modelList.add(keluhanModel);
-                    }
-                    else if (unitSpinner.getSelectedItem().toString().equals("Semua")){
-                        modelList.add(keluhanModel);
-                    }
+                    modelList.add(keluhanModel);
                     setAdapter();
                 }
             }
