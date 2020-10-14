@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,9 +15,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.rsip.adminrsimoblie.Model.UserModel;
 import com.rsip.adminrsimoblie.R;
 import com.rsip.adminrsimoblie.RecyclerView.KeluhanModel;
 import com.rsip.adminrsimoblie.RecyclerView.ListKeluhanActivity;
@@ -27,7 +32,8 @@ public class BalasKeluhanActivity extends AppCompatActivity {
     Button btnBalas;
     Intent intent;
     FirebaseUser firebaseUser;
-    DatabaseReference dbrefrence= FirebaseDatabase.getInstance().getReference();
+    DatabaseReference dbrefrence = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,7 @@ public class BalasKeluhanActivity extends AppCompatActivity {
         btnBalas=findViewById(R.id.btn_balas);
         intent=getIntent();
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+       reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
     }
 
     private void fillFromIntent(){
@@ -60,29 +67,52 @@ public class BalasKeluhanActivity extends AppCompatActivity {
     }
 
     private void balasKeluhan(){
+
         btnBalas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KeluhanModel keluhanModel=new KeluhanModel();
+                //get nama pembalas
 
-                keluhanModel.setIdPembalas(firebaseUser.getUid());
-                keluhanModel.setNama(intent.getStringExtra("nama"));
-                keluhanModel.setTanggal(intent.getStringExtra("tanggal"));
-                keluhanModel.setKategori(intent.getStringExtra("kategori"));
-                keluhanModel.setUnit(intent.getStringExtra("ruangan"));
-                keluhanModel.setKeluhan(intent.getStringExtra("keluhan"));
-                keluhanModel.setSender(intent.getStringExtra("sender"));
-                keluhanModel.setStatusBalas("Dibalas");
-                keluhanModel.setPesanBalasan(edtTextBalas.getText().toString());
 
-                dbrefrence.child("Keluhan").child(intent.getStringExtra("key")).setValue(keluhanModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(BalasKeluhanActivity.this, "Balasan Telah Terkirim", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(BalasKeluhanActivity.this, ListKeluhanActivity.class));
-                        finish();
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        UserModel userModel=snapshot.getValue(UserModel.class);
+
+                        KeluhanModel keluhanModel=new KeluhanModel();
+                        keluhanModel.setIdPembalas(firebaseUser.getUid());
+                        keluhanModel.setNamaPembalas(userModel.getUsername());
+                        keluhanModel.setNama(intent.getStringExtra("nama"));
+                        keluhanModel.setTanggal(intent.getStringExtra("tanggal"));
+                        keluhanModel.setKategori(intent.getStringExtra("kategori"));
+                        keluhanModel.setUnit(intent.getStringExtra("ruangan"));
+                        keluhanModel.setKeluhan(intent.getStringExtra("keluhan"));
+                        keluhanModel.setSender(intent.getStringExtra("sender"));
+                        keluhanModel.setStatusBalas("Dibalas");
+                        keluhanModel.setPesanBalasan(edtTextBalas.getText().toString());
+                       // keluhanModel.setNamaPembalas("yoga boss");
+                        dbrefrence.child("Keluhan").child(intent.getStringExtra("key")).setValue(keluhanModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Toast.makeText(BalasKeluhanActivity.this, "Balasan Telah Terkirim", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(BalasKeluhanActivity.this, ListKeluhanActivity.class));
+                                finish();
+                            }
+                        });
+                        Log.d("balasKeluhan", "onDataChange: "+keluhanModel.getNamaPembalas());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
                     }
                 });
+
+
+
+                Log.d("balasKeluhan", "onClick: "+firebaseUser.getUid());
+
+
             }
         });
 

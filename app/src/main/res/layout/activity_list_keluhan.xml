@@ -68,23 +68,46 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tampilkan Unit"
+                android:text="Tampilkan Keluhan"
                 android:textSize="16sp"
                 android:gravity="left"
                 android:textColor="@android:color/black"
                 android:fontFamily="@font/bookmanoldstyle"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="14dp"/>
-            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/spiner_unit"
-                android:entries="@array/unit"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                style="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
-                android:background="@drawable/bg_template"
-                />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="radioChecked"
+                    >
+                    <RadioButton
+                        android:id="@+id/semua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Semua"
+                        android:fontFamily="@font/bookmanoldstyle"/>
+                    <RadioButton
+                        android:id="@+id/dibalas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dibalas"
+                        android:fontFamily="@font/bookmanoldstyle"
+                        android:layout_marginLeft="10dp"/>
+                    <RadioButton
+                        android:id="@+id/belumDibalas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Belum Dibalas"
+                        android:fontFamily="@font/bookmanoldstyle"
+                        android:layout_marginLeft="10dp"/>
+                </RadioGroup>
+
+
+
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"

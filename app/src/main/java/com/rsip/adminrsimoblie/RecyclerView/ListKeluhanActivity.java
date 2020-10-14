@@ -25,6 +25,8 @@ import com.rsip.adminrsimoblie.R;
 import com.rsip.adminrsimoblie.View.RincianKeluhanActivity;
 
 import android.widget.AdapterView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.os.Handler;
@@ -40,6 +42,7 @@ public class ListKeluhanActivity extends AppCompatActivity {
     private ArrayList<KeluhanModel> modelList = new ArrayList<>();
     DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Keluhan");
     Spinner unitSpinner;
+    RadioGroup rbGroup;
 
 
     @Override
@@ -48,7 +51,7 @@ public class ListKeluhanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_keluhan);
 
         findViews();
-        readKeluhan();
+        readKeluhan("semua");
 
 
     }
@@ -56,47 +59,21 @@ public class ListKeluhanActivity extends AppCompatActivity {
     private void findViews() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         unitSpinner=findViewById(R.id.spiner_unit);
+        rbGroup=findViewById(R.id.radioGroup);
 
-        unitSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
     }
 
-    private void spinerData(int pos){
-        switch (pos){
-            case 0:
+//    private void radioChecked(View view){
+//        boolean checked=((RadioButton) view).isChecked();
+//        switch (view.getId()){
+//            case R.id.semua:
+//                if (checked)
+//
+//        }
+//    }
 
-        }
-    }
 
     private void setAdapter() {
-
-
-//        modelList.add(new KeluhanModel("Android", "Hello " + " Android"));
-//        modelList.add(new KeluhanModel("Beta", "Hello " + " Beta"));
-//        modelList.add(new KeluhanModel("Cupcake", "Hello " + " Cupcake"));
-//        modelList.add(new KeluhanModel("Donut", "Hello " + " Donut"));
-//        modelList.add(new KeluhanModel("Eclair", "Hello " + " Eclair"));
-//        modelList.add(new KeluhanModel("Froyo", "Hello " + " Froyo"));
-//        modelList.add(new KeluhanModel("Gingerbread", "Hello " + " Gingerbread"));
-//        modelList.add(new KeluhanModel("Honeycomb", "Hello " + " Honeycomb"));
-//        modelList.add(new KeluhanModel("Ice Cream Sandwich", "Hello " + " Ice Cream Sandwich"));
-//        modelList.add(new KeluhanModel("Jelly Bean", "Hello " + " Jelly Bean"));
-//        modelList.add(new KeluhanModel("KitKat", "Hello " + " KitKat"));
-//        modelList.add(new KeluhanModel("Lollipop", "Hello " + " Lollipop"));
-//        modelList.add(new KeluhanModel("Marshmallow", "Hello " + " Marshmallow"));
-//        modelList.add(new KeluhanModel("Nougat", "Hello " + " Nougat"));
-//        modelList.add(new KeluhanModel("Android O", "Hello " + " Android O"));
-
-
         mAdapter = new KeluhanAdapter(ListKeluhanActivity.this, modelList);
 
         recyclerView.setHasFixedSize(true);
@@ -143,14 +120,16 @@ public class ListKeluhanActivity extends AppCompatActivity {
 
     }
 
-    private void readKeluhan(){
+    private void readKeluhan(final String status){
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     KeluhanModel keluhanModel=dataSnapshot.getValue(KeluhanModel.class);
                     keluhanModel.setKey(dataSnapshot.getKey());
-                    modelList.add(keluhanModel);
+                    if (status.equals(keluhanModel.getStatusBalas())) {
+                        modelList.add(keluhanModel);
+                    }
                     setAdapter();
                 }
             }

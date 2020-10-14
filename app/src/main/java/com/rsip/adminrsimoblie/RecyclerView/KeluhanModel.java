@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class KeluhanModel {
 
-    String idPembalas,kategori,keluhan,nama,pesanBalasan,sender,statusBalas,tanggal,unit;
+    String idPembalas,kategori,keluhan,nama,pesanBalasan,sender,statusBalas,tanggal,unit,namaPembalas;
     String key;
 
     public KeluhanModel() {
@@ -88,5 +88,13 @@ public class KeluhanModel {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public String getNamaPembalas() {
+        return namaPembalas;
+    }
+
+    public void setNamaPembalas(String namaPembalas) {
+        this.namaPembalas = namaPembalas;
     }
 }
