@@ -32,12 +32,17 @@
       </androidx.appcompat.widget.Toolbar>
    </RelativeLayout>
 
+   <RelativeLayout
+       android:id="@+id/rel_utama"
+       android:layout_below="@id/rel_toolbar"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
    <LinearLayout
        android:id="@+id/linDokter"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="vertical"
-       android:layout_below="@id/rel_toolbar"
+       android:visibility="gone"
        >
       <androidx.cardview.widget.CardView
           android:id="@+id/cardview_dokter"
@@ -101,12 +106,181 @@
       </androidx.cardview.widget.CardView>
    </LinearLayout>
 
+   <LinearLayout
+       android:id="@+id/linSupir"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:visibility="gone"
+       >
+      <androidx.cardview.widget.CardView
+          android:id="@+id/cardview_ambulance"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:cardCornerRadius="13dp"
+          android:elevation="8dp"
+          android:divider="@android:color/transparent"
+          android:dividerHeight="0.0px"
+          android:clipToPadding="false"
+          android:clipChildren="false"
+          app:cardElevation="10dp"
+          app:cardPreventCornerOverlap="false"
+          android:layout_marginBottom="13dp"
+          android:layout_marginTop="12dp"
+          android:layout_marginLeft="12dp"
+          android:layout_marginRight="12dp"
+
+          >
+         <com.facebook.shimmer.ShimmerFrameLayout
+             android:id="@+id/shimer_view_container_ambulance"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:orientation="vertical"
+             shimmer:duration="800">
+<!--            <include layout="@layout/custom_section_dokter"/>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+               <ImageView
+                   android:layout_width="200dp"
+                   android:layout_height="150dp"
+                   android:src="@drawable/ambulance"
+                   android:layout_gravity="center"/>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Data Mobil Ambulance"
+                   android:textSize="24sp"
+                   android:fontFamily="@font/bookmanoldstyle"
+                   android:textColor="@android:color/black"
+                   android:gravity="center"/>
+            </LinearLayout>
+
+         </com.facebook.shimmer.ShimmerFrameLayout>
+
+      </androidx.cardview.widget.CardView>
+      <androidx.cardview.widget.CardView
+          android:id="@+id/cardview_mobilkeluar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:cardCornerRadius="13dp"
+          android:elevation="8dp"
+          android:divider="@android:color/transparent"
+          android:dividerHeight="0.0px"
+          android:clipToPadding="false"
+          android:clipChildren="false"
+          app:cardElevation="10dp"
+          app:cardPreventCornerOverlap="false"
+          android:layout_marginBottom="13dp"
+          android:layout_marginTop="12dp"
+          android:layout_marginLeft="12dp"
+          android:layout_marginRight="12dp"
+
+          >
+         <com.facebook.shimmer.ShimmerFrameLayout
+             android:id="@+id/shimer_view_container_mobilkeluar"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:orientation="vertical"
+             shimmer:duration="800">
+<!--            <include layout="@layout/custom_section_keluhan"/>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+               <ImageView
+                   android:layout_width="200dp"
+                   android:layout_height="150dp"
+                   android:src="@drawable/route"
+                   android:layout_gravity="center"/>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Data Ambulance Keluar"
+                   android:textSize="24sp"
+                   android:fontFamily="@font/bookmanoldstyle"
+                   android:textColor="@android:color/black"
+                   android:gravity="center"/>
+            </LinearLayout>
+
+         </com.facebook.shimmer.ShimmerFrameLayout>
+
+      </androidx.cardview.widget.CardView>
+   </LinearLayout>
+       <LinearLayout
+           android:id="@+id/linIp2"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           >
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardview_KerjaIp2"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:cardCornerRadius="13dp"
+               android:elevation="8dp"
+               android:divider="@android:color/transparent"
+               android:dividerHeight="0.0px"
+               android:clipToPadding="false"
+               android:clipChildren="false"
+               app:cardElevation="10dp"
+               app:cardPreventCornerOverlap="false"
+               android:layout_marginBottom="13dp"
+               android:layout_marginTop="12dp"
+               android:layout_marginLeft="12dp"
+               android:layout_marginRight="12dp"
+
+               >
+               <com.facebook.shimmer.ShimmerFrameLayout
+                   android:id="@+id/shimer_view_container_Ip2"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:orientation="vertical"
+                   shimmer:duration="800">
+                   <!--            <include layout="@layout/custom_section_dokter"/>-->
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical">
+
+                       <ImageView
+                           android:layout_width="200dp"
+                           android:layout_height="150dp"
+                           android:src="@drawable/work"
+                           android:layout_gravity="center"/>
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="Data Pekerjaan"
+                           android:textSize="24sp"
+                           android:fontFamily="@font/bookmanoldstyle"
+                           android:textColor="@android:color/black"
+                           android:gravity="center"/>
+                   </LinearLayout>
+
+               </com.facebook.shimmer.ShimmerFrameLayout>
+
+           </androidx.cardview.widget.CardView>
+
+       </LinearLayout>
+   </RelativeLayout>
+
    <Button
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:layout_margin="16dp"
        android:id="@+id/btnlogout"
+       android:background="@color/colorPrimaryDark"
        android:text="Keluar"
-       android:layout_below="@id/linDokter"
+       android:layout_below="@id/rel_utama"
        android:gravity="center"/>
 
 </RelativeLayout>

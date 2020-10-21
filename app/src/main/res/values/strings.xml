@@ -45,4 +45,11 @@
         <item>POLI UROLOGI</item>
         <item>Radiologi</item>
     </string-array>
+    <string-array name="jenis_kendaraan">
+        <item>Ambulance</item>
+        <item>Mobil Umum</item>
+    </string-array>
+    <string-array name="nopol">
+        <item></item>
+    </string-array>
 </resources>

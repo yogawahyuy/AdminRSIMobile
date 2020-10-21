@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,23 @@
         android:roundIcon="@mipmap/ic_launcher_admin_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.RegisterActivity"></activity>
+        <activity android:name=".View.DetailAmbulanceKeluarActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBNQ33bOtPutevn8EUgmvjyXkDyoSVHmzk" />
+
+        <activity android:name=".View.TambahMobilKeluarActivity" />
+        <activity
+            android:name=".RecyclerView.DataAmbulanceKeluarActivity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+        <activity android:name=".View.TambahMobilActivity" />
+        <activity
+            android:name=".RecyclerView.DataMobilAmbulanceActivity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+        <activity android:name=".View.RegisterActivity" />
         <activity android:name=".View.BalasKeluhanActivity" />
         <activity android:name=".View.RincianKeluhanActivity" />
         <activity

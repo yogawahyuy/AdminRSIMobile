@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -24,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.rsip.adminrsimoblie.MainActivity;
 import com.rsip.adminrsimoblie.R;
+import com.rsip.adminrsimoblie.Util.SharedPreferenceManager;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser firebaseUser;
     DatabaseReference reference;
+
+    SharedPreferenceManager sharedPreferenceManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         password=findViewById(R.id.password);
         btnLogin=findViewById(R.id.btnlogin);
         dialogView=new CustomDialogView(this);
+        sharedPreferenceManager=new SharedPreferenceManager(this);
 //        btnLogin.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -84,6 +89,10 @@ public class LoginActivity extends AppCompatActivity {
                 return false;
             }
         });
+        if (sharedPreferenceManager.getSPSudahLogin()){
+            startActivity(new Intent(LoginActivity.this,MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK));
+            finish();
+        }
     }
     @Override
     protected void onStart() {
@@ -103,15 +112,43 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 LoginModel loginModel=new LoginModel();
+                Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     loginModel=dataSnapshot.getValue(LoginModel.class);
                     if (loginModel.getUsername().equalsIgnoreCase(email.getText().toString())&&loginModel.getPassword().equalsIgnoreCase(password.getText().toString())){
                         if (loginModel.getBagian().equalsIgnoreCase("bidyan")){
                             Log.d("data", "onDataChange: bidyan");
+                            intent.putExtra("username",loginModel.getUsername());
+                            intent.putExtra("bagian",loginModel.getBagian());
+                            intent.putExtra("nama",loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_USERNAME,loginModel.getUsername());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_BAGIAN,loginModel.getBagian());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_NAMA,loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPBoolean(sharedPreferenceManager.SP_SUDAH_LOGIN,true);
+                            startActivity(intent);
+                            finish();
                         }if (loginModel.getBagian().equalsIgnoreCase("supir")){
+                            intent.putExtra("username",loginModel.getUsername());
+                            intent.putExtra("bagian",loginModel.getBagian());
+                            intent.putExtra("nama",loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_USERNAME,loginModel.getUsername());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_BAGIAN,loginModel.getBagian());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_NAMA,loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPBoolean(sharedPreferenceManager.SP_SUDAH_LOGIN,true);
+                            startActivity(intent);
+                            finish();
                             Log.d("data", "onDataChange: supir");
                         }if (loginModel.getBagian().equalsIgnoreCase("ip2")){
                             Log.d("data", "onDataChange: ip2");
+                            intent.putExtra("username",loginModel.getUsername());
+                            intent.putExtra("bagian",loginModel.getBagian());
+                            intent.putExtra("nama",loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_USERNAME,loginModel.getUsername());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_BAGIAN,loginModel.getBagian());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_NAMA,loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPBoolean(sharedPreferenceManager.SP_SUDAH_LOGIN,true);
+                            startActivity(intent);
+                            finish();
                         }
 
                     }

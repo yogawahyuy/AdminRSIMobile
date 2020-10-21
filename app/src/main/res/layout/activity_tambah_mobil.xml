@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.TambahMobilActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <RelativeLayout
+                android:id="@+id/rel_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    >
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/logo3"
+                        android:layout_marginStart="20dp"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/akreditasi"
+                        android:layout_marginStart="60dp"/>
+
+                </androidx.appcompat.widget.Toolbar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_titlebed"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_below="@id/rel_toolbar"
+                android:layout_marginBottom="3dp"
+                android:background="@color/colorPrimaryDark"
+                >
+
+                <TextView
+                    android:id="@+id/text_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:gravity="center_horizontal"
+                    android:text="Tambah Data Mobil"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_container"
+                android:layout_below="@id/rel_titlebed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="16dp">
+                <LinearLayout
+                    android:id="@+id/lin_plat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Plat Nomor"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bookmanoldstyle"
+                        android:textColor="@color/colorGREY"/>
+                    <EditText
+                        android:id="@+id/edtTxt_plat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="Contoh R 51 P"
+                        android:fontFamily="@font/bookmanoldstyle"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Kendaraan"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bookmanoldstyle"
+                        android:textColor="@color/colorGREY"/>
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:entries="@array/jenis_kendaraan"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Merek Kendaraan"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bookmanoldstyle"
+                        android:textColor="@color/colorGREY"/>
+                    <EditText
+                        android:id="@+id/edtTxt_merk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="Contoh SUZUKI"
+                        android:fontFamily="@font/bookmanoldstyle"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Type Kendaraan"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bookmanoldstyle"
+                        android:textColor="@color/colorGREY"/>
+                    <EditText
+                        android:id="@+id/edtTxt_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="Contoh ELF"
+                        android:fontFamily="@font/bookmanoldstyle"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jatuh Tempo Pajak"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bookmanoldstyle"
+                        android:textColor="@color/colorGREY"/>
+                    <EditText
+                        android:id="@+id/edtTxt_pajak"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:fontFamily="@font/bookmanoldstyle"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jatuh Tempo Plat"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bookmanoldstyle"
+                        android:textColor="@color/colorGREY"/>
+                    <EditText
+                        android:id="@+id/edtTxt_tempoplat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:fontFamily="@font/bookmanoldstyle"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_simpan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Simpan"
+                    android:background="@color/colorPrimaryDark"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
