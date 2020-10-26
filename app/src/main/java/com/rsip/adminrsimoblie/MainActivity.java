@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.rsip.adminrsimoblie.RecyclerView.DataAmbulanceKeluarActivity;
 import com.rsip.adminrsimoblie.RecyclerView.DataMobilAmbulanceActivity;
+import com.rsip.adminrsimoblie.RecyclerView.DataPekerjaanIp2Activity;
 import com.rsip.adminrsimoblie.RecyclerView.ListKeluhanActivity;
 import com.rsip.adminrsimoblie.Util.SharedPreferenceManager;
 import com.rsip.adminrsimoblie.View.InfoDokterActivity;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button logout;
     FirebaseUser firebaseUser;
     LinearLayout linDokter,linSupir,linIp2;
-    CardView cardViewDokter,cardViewKeluhan,cardViewAmbulance,cardViewAmbulanceKeluar;
+    CardView cardViewDokter,cardViewKeluhan,cardViewAmbulance,cardViewAmbulanceKeluar,cardViewIp2;
     Intent intent;
     SharedPreferenceManager sharedPreferenceManager;
     @Override
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         cardViewKeluhan=findViewById(R.id.cardview_keluhan);
         cardViewAmbulance=findViewById(R.id.cardview_ambulance);
         cardViewAmbulanceKeluar=findViewById(R.id.cardview_mobilkeluar);
+        cardViewIp2=findViewById(R.id.cardview_KerjaIp2);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,5 +118,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DataAmbulanceKeluarActivity.class));
             }
         });
+
+        cardViewIp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, DataPekerjaanIp2Activity.class));
+            }
+        });
+
     }
 }

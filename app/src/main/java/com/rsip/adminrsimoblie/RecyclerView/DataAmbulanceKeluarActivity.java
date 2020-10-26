@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rsip.adminrsimoblie.R;
 
+import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Handler;
 
@@ -42,6 +43,7 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
 
     private ArrayList<AmbulanceKeluarModel> modelList = new ArrayList<>();
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Driver").child("MobilKeluar");
+    TextView emptyView;
 
 
 
@@ -65,6 +67,7 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
                 startActivity(new Intent(DataAmbulanceKeluarActivity.this, TambahMobilKeluarActivity.class));
             }
         });
+        emptyView=findViewById(R.id.empty_view);
         getDataFromFirebase();
     }
 
@@ -88,14 +91,7 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
         mAdapter.SetOnItemClickListener(new AmbulanceKeluarAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, AmbulanceKeluarModel model) {
-//                String keys=modelList.get(position).getKey();
-//                String noplat=modelList.get(position).getNoPlat();
-//                String jenisKendaraan=modelList.get(position).getJenisKendaraan();
-//                String merekKendaraan=modelList.get(position).getMerkKendaraan();
-//                String pajakKendaraan=modelList.get(position).get();
-//                String pajakPlatKendaraan=modelList.get(posisi).getPajakPlatKendaraan();
-//                String typeKendaraan=modelList.get(posisi).getTypeKendaraan();
-//                String status=modelList.get(posisi).getStatus();
+
                 //handle item click events here
                // Toast.makeText(DataAmbulanceKeluarActivity.this, "Hey " + model.getTujuan(), Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(DataAmbulanceKeluarActivity.this, DetailAmbulanceKeluarActivity.class);
@@ -130,6 +126,13 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
                     ambulanceKeluarModel.setKey(dataSnapshot.getKey());
                     if (ambulanceKeluarModel.getStatus().equalsIgnoreCase("Keluar")){
                         modelList.add(ambulanceKeluarModel);
+                    }
+                    if (modelList.size()==0){
+                        emptyView.setVisibility(View.VISIBLE);
+                        recyclerView.setVisibility(View.GONE);
+                    }else{
+                        emptyView.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                     }
                     setAdapter();
                 }
