@@ -5,5 +5,186 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.TambahDataPekerjaanIp2Activity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rel_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                >
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/logo3"
+                    android:layout_marginStart="20dp"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/akreditasi"
+                    android:layout_marginStart="60dp"/>
+
+            </androidx.appcompat.widget.Toolbar>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_titlebed"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_below="@id/rel_toolbar"
+            android:layout_marginBottom="3dp"
+            android:background="@color/colorPrimaryDark"
+            >
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tambah Pekerjaan"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:fontFamily="@font/bookmanoldstyle"
+                android:textColor="@android:color/white"
+                />
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/lin_container"
+            android:layout_below="@id/rel_titlebed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+            <LinearLayout
+                android:id="@+id/lin_nama_pekerjaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Pekerjaan"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:textColor="@color/colorGREY"/>
+                <EditText
+                    android:id="@+id/edtTxt_Pekerjaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Contoh: Perbaikan Ruang Diklat "
+                    android:fontFamily="@font/bookmanoldstyle"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_lokasi_pekerjaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lokasi Pengerjaan"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:textColor="@color/colorGREY"/>
+                <EditText
+                    android:id="@+id/edtTxt_lokasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Ruang Assalam "
+                    android:fontFamily="@font/bookmanoldstyle"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_nama_pengerja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Pekerja"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:textColor="@color/colorGREY"/>
+                <EditText
+                    android:id="@+id/edtTxt_namapekerja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint=""
+                    android:fontFamily="@font/bookmanoldstyle"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_tgl_pekerjaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Pengerjaan"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:textColor="@color/colorGREY"/>
+                <EditText
+                    android:id="@+id/edtTxt_tgl_pengerjaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint=""
+                    android:fontFamily="@font/bookmanoldstyle"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lin_jam_pekerjaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jam Pengerjaan"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:textColor="@color/colorGREY"/>
+                <EditText
+                    android:id="@+id/edtTxt_jam_pengerjaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint=""
+                    android:fontFamily="@font/bookmanoldstyle"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_below="@id/lin_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="simpan"
+            android:fontFamily="@font/bookmanoldstyle"
+            android:background="@color/colorPrimaryDark"/>
+
+    </RelativeLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_admin_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.TambahDataPekerjaanIp2Activity"></activity>
+        <activity android:name=".View.DetailPekerjaanIp2Activity"></activity>
+        <activity android:name=".View.TambahDataPekerjaanIp2Activity" />
         <activity
             android:name=".RecyclerView.DataPekerjaanIp2Activity"
             android:label=""

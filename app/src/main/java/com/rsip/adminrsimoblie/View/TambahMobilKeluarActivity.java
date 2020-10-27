@@ -112,6 +112,7 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 newPlacePicker();
+                //showPlacePicker();
             }
         });
         tanggal.setOnClickListener(new View.OnClickListener() {
@@ -246,28 +247,6 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
         timePickerDialog.show();
     }
 
-    private void showPlacePicker() {
-//       // Intent intent=new PlacePicker.IntentBuilder();
-//        PlacePicker.IntentBuilder builder=new PlacePicker.IntentBuilder();
-//        try{
-//            startActivityForResult(builder.build(TambahMobilKeluarActivity.this),PLACE_PICKER_REQUEST);
-//        }catch (GooglePlayServicesNotAvailableException e){
-//            e.printStackTrace();
-//        }catch (GooglePlayServicesRepairableException e){
-//            e.printStackTrace();
-//        }
-        PingPlacePicker.IntentBuilder builder = new PingPlacePicker.IntentBuilder();
-        builder.setAndroidApiKey("AIzaSyA4RxeqHqUMg15zqaf4RjRCF5lnEJ4Gm6Y").setMapsApiKey("AIzaSyCPzqOBuv1DYkx6tsxmv0QaXWqX6fAfE5Q");
-
-        try {
-            Intent placeIntent = builder.build(TambahMobilKeluarActivity.this);
-            startActivityForResult(placeIntent, PLACE_PICKER_REQUEST);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(this, "EROORR", Toast.LENGTH_LONG).show();
-        }
-    }
-
     private void newPlacePicker() {
         Places.initialize(this, "AIzaSyCPzqOBuv1DYkx6tsxmv0QaXWqX6fAfE5Q");
         PlacesClient placesClient = Places.createClient(this);
@@ -276,6 +255,17 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
 
         Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN, fields).build(this);
         startActivityForResult(intent, PLACE_PICKER_REQUEST);
+    }
+    private void showPlacePicker(){
+        PingPlacePicker.IntentBuilder builder=new PingPlacePicker.IntentBuilder();
+        builder.setMapsApiKey("AIzaSyCPzqOBuv1DYkx6tsxmv0QaXWqX6fAfE5Q").setAndroidApiKey("AIzaSyCPzqOBuv1DYkx6tsxmv0QaXWqX6fAfE5Q");
+        try {
+            Intent placeIntent = builder.build(this);
+            startActivityForResult(placeIntent, PLACE_PICKER_REQUEST);
+        }
+        catch (Exception ex) {
+            Toast.makeText(this, "Google Play services is not available... ", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -316,7 +306,7 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
             return;
         }
 
-        super.onActivityResult(requestCode, resultCode, data);
+       super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void distanceBetwen() {

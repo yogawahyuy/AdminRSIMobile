@@ -4,33 +4,80 @@ import java.util.ArrayList;
 
 public class DataPekerjaanIp2Model {
 
-    private String title;
-
-    private String message;
-
-
-    public DataPekerjaanIp2Model(String title, String message) {
-        this.title = title;
-        this.message = message;
-    }
+   private String key,namaPekerjaan,lokasiPekerjaan,namaPekerja,tanggalPengerjaan,jamPengerjaan,jamPengerjaanOtomatis,tanggalPengerjaanOtomatis,status;
 
     public DataPekerjaanIp2Model() {
-
     }
 
-    public String getTitle() {
-        return title;
+    public String getKey() {
+        return key;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setKey(String key) {
+        this.key = key;
     }
 
-    public String getMessage() {
-        return message;
+    public String getNamaPekerjaan() {
+        return namaPekerjaan;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setNamaPekerjaan(String namaPekerjaan) {
+        this.namaPekerjaan = namaPekerjaan;
+    }
+
+    public String getLokasiPekerjaan() {
+        return lokasiPekerjaan;
+    }
+
+    public void setLokasiPekerjaan(String lokasiPekerjaan) {
+        this.lokasiPekerjaan = lokasiPekerjaan;
+    }
+
+    public String getNamaPekerja() {
+        return namaPekerja;
+    }
+
+    public void setNamaPekerja(String namaPekerja) {
+        this.namaPekerja = namaPekerja;
+    }
+
+    public String getTanggalPengerjaan() {
+        return tanggalPengerjaan;
+    }
+
+    public void setTanggalPengerjaan(String tanggalPengerjaan) {
+        this.tanggalPengerjaan = tanggalPengerjaan;
+    }
+
+    public String getJamPengerjaan() {
+        return jamPengerjaan;
+    }
+
+    public void setJamPengerjaan(String jamPengerjaan) {
+        this.jamPengerjaan = jamPengerjaan;
+    }
+
+    public String getJamPengerjaanOtomatis() {
+        return jamPengerjaanOtomatis;
+    }
+
+    public void setJamPengerjaanOtomatis(String jamPengerjaanOtomatis) {
+        this.jamPengerjaanOtomatis = jamPengerjaanOtomatis;
+    }
+
+    public String getTanggalPengerjaanOtomatis() {
+        return tanggalPengerjaanOtomatis;
+    }
+
+    public void setTanggalPengerjaanOtomatis(String tanggalPengerjaanOtomatis) {
+        this.tanggalPengerjaanOtomatis = tanggalPengerjaanOtomatis;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

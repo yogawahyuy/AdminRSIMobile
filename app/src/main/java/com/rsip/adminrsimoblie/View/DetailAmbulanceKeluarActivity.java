@@ -115,10 +115,6 @@ public class DetailAmbulanceKeluarActivity extends AppCompatActivity {
         String key=reference.child(intent.getStringExtra("NoPlat")).push().getKey();
         reference.child(intent.getStringExtra("NoPlat")).child(key).setValue(hashMap);
        // reference.child(intent.getStringExtra("key")).setValue(hashMap);
-
-
-
-
     }
 
     private void upadteDataMobilKeluar(){

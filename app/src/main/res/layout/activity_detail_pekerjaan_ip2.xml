@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.DetailPekerjaanIp2Activity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/rel_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    >
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/logo3"
+                        android:layout_marginStart="20dp"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/akreditasi"
+                        android:layout_marginStart="60dp"/>
+
+                </androidx.appcompat.widget.Toolbar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_titlebed"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_below="@id/rel_toolbar"
+                android:layout_marginBottom="3dp"
+                android:background="@color/colorPrimaryDark"
+                >
+                <TextView
+                    android:id="@+id/text_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Detail Pekerjaan"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:textColor="@android:color/white"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/box_data"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rel_titlebed"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/data_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_template">
+                    <RelativeLayout
+                        android:id="@+id/page_nama_pekerjaan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/titel_namapekerjaan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nama Pekerjaan"
+                            android:layout_marginLeft="16dp"
+                            android:fontFamily="@font/bookmanoldstyle"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/textnamapekerjaan"
+                            android:layout_below="@id/titel_namapekerjaan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="Memperbaiki Gedung"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:typeface="normal"
+                            android:fontFamily="@font/bookmanoldstyle"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="14dp"
+                            android:background="@color/colorGREY"
+                            android:layout_below="@id/textnamapekerjaan"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/page_lokasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/page_nama_pekerjaan"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/titellokasi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:fontFamily="@font/bookmanoldstyle"
+                            android:text="Lokasi Pengerjaan"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textlokasi"
+                            android:layout_below="@id/titellokasi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="Ruang Diklat"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:typeface="normal"
+                            android:fontFamily="@font/bookmanoldstyle"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="14dp"
+                            android:background="@color/colorGREY"
+                            android:layout_below="@id/textlokasi"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/page_nama_pekerja"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/page_lokasi"
+                        android:padding="10dp">
+                        <TextView
+                            android:id="@+id/titelnama_pekerja"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nama Pekerja"
+                            android:layout_marginLeft="16dp"
+                            android:fontFamily="@font/bookmanoldstyle"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/textnamapekerja"
+                            android:layout_below="@id/titelnama_pekerja"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="Yoga Wahyu Yuwono"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:typeface="normal"
+                            android:fontFamily="@font/bookmanoldstyle"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="14dp"
+                            android:background="@color/colorGREY"
+                            android:layout_below="@id/textnamapekerja"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/page_jampengerjaan"
+                        android:layout_below="@id/page_tanggal_pengerjaan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/titeljampengerjaan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jam Pengerjaan"
+                            android:layout_marginLeft="16dp"
+                            android:fontFamily="@font/bookmanoldstyle"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/textjampengerjaan"
+                            android:layout_below="@id/titeljampengerjaan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="08:08"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:typeface="normal"
+                            android:fontFamily="@font/bookmanoldstyle"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="14dp"
+                            android:background="@color/colorGREY"
+                            android:layout_below="@id/textjampengerjaan"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:id="@+id/page_jk"
+                        android:layout_below="@id/page_jampengerjaan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/titelpoli"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jarak"
+                            android:layout_marginLeft="16dp"
+                            android:fontFamily="@font/bookmanoldstyle"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_below="@id/titelpoli"
+                            android:id="@+id/textjarak"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="Yoga Wahyu Yuwono"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:typeface="normal"
+                            android:fontFamily="@font/bookmanoldstyle"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="14dp"
+                            android:background="@color/colorGREY"
+                            android:layout_below="@id/textjarak"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:id="@+id/page_alamat"
+                        android:layout_below="@id/page_jk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/titelhari"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jenis Kendaraan"
+                            android:layout_marginLeft="16dp"
+                            android:fontFamily="@font/bookmanoldstyle"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/textjenis"
+                            android:layout_below="@id/titelhari"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="Yoga Wahyu Yuwono"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:typeface="normal"
+                            android:fontFamily="@font/bookmanoldstyle"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="14dp"
+                            android:background="@color/colorGREY"
+                            android:layout_below="@id/textjenis"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/page_tanggal_pengerjaan"
+                        android:layout_below="@id/page_nama_pekerja"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/titeltanggalPengerjaan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tanggal Pengerjaan"
+                            android:layout_marginLeft="16dp"
+                            android:fontFamily="@font/bookmanoldstyle"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/texttanggal"
+                            android:layout_below="@id/titeltanggalPengerjaan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="27/28/2828"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:typeface="normal"
+                            android:fontFamily="@font/bookmanoldstyle"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="14dp"
+                            android:background="@color/colorGREY"
+                            android:layout_below="@id/texttanggal"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_selesai"
+                    android:layout_below="@id/data_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pekerjaan selesai"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_marginTop="16dp"/>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

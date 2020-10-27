@@ -55,8 +55,8 @@ public class DataPekerjaanIp2Adapter extends RecyclerView.Adapter<RecyclerView.V
             final DataPekerjaanIp2Model model = getItem(position);
             ViewHolder genericViewHolder = (ViewHolder) holder;
 
-            genericViewHolder.itemTxtTitle.setText(model.getTitle());
-            genericViewHolder.itemTxtMessage.setText(model.getMessage());
+            genericViewHolder.itemTxtTitle.setText(model.getNamaPekerjaan());
+            genericViewHolder.itemTxtMessage.setText(model.getNamaPekerja());
 
 
         }
