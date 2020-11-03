@@ -7,6 +7,7 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -77,6 +78,8 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
     final List<String> titleList = new ArrayList<String>();
     LatLng latLangTo;
 
+    private ProgressDialog progressDialog;
+
     private int PLACE_PICKER_REQUEST = 1;
 
     @Override
@@ -108,10 +111,11 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
         getTimeNow();
         getDateNow();
 
+
         tujuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                newPlacePicker();
+                //newPlacePicker();
                 //showPlacePicker();
             }
         });
@@ -130,6 +134,7 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progresDialog();
                 getDateNowAutomatoc();
                 getTimeNowAutomatic();
                 addIntoFirebase();
@@ -365,11 +370,21 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     Toast.makeText(TambahMobilKeluarActivity.this, "Updated", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(TambahMobilKeluarActivity.this, DataAmbulanceKeluarActivity.class));
+                    progressDialog.dismiss();
                     finish();
                 }
             });
 
 
         }
+    }
+
+    private void progresDialog(){
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Menambahkan Data");
+        progressDialog.setIndeterminate(false);
+        progressDialog.setCanceledOnTouchOutside(true);
+        progressDialog.setCancelable(true);
+        progressDialog.show();
     }
 }

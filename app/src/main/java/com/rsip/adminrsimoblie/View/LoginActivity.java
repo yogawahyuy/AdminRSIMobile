@@ -111,13 +111,15 @@ public class LoginActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                LoginModel loginModel=new LoginModel();
+
                 Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    loginModel=dataSnapshot.getValue(LoginModel.class);
+                   LoginModel loginModel=dataSnapshot.getValue(LoginModel.class);
                     if (loginModel.getUsername().equalsIgnoreCase(email.getText().toString())&&loginModel.getPassword().equalsIgnoreCase(password.getText().toString())){
+                        Log.d("datalogin", "onDataChange: "+loginModel.getBagian());
                         if (loginModel.getBagian().equalsIgnoreCase("bidyan")){
-                            Log.d("data", "onDataChange: bidyan");
+                            Log.d("datalogin", "onDataChange: bidyan");
+
                             intent.putExtra("username",loginModel.getUsername());
                             intent.putExtra("bagian",loginModel.getBagian());
                             intent.putExtra("nama",loginModel.getNamaLengkap());

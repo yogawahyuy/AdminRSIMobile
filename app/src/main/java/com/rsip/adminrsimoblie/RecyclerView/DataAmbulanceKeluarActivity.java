@@ -3,6 +3,7 @@ package com.rsip.adminrsimoblie.RecyclerView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -40,6 +41,7 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
     private AmbulanceKeluarAdapter mAdapter;
+    private ProgressDialog progressDialog;
 
     private ArrayList<AmbulanceKeluarModel> modelList = new ArrayList<>();
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Driver").child("MobilKeluar");
@@ -68,7 +70,9 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
             }
         });
         emptyView=findViewById(R.id.empty_view);
+        emptyView.setVisibility(View.GONE);
         getDataFromFirebase();
+        progresDialog();
     }
 
 
@@ -130,9 +134,11 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
                     if (modelList.size()==0){
                         emptyView.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
+                        progressDialog.dismiss();
                     }else{
                         emptyView.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
+                        progressDialog.dismiss();
                     }
                     setAdapter();
                 }
@@ -143,5 +149,14 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void progresDialog(){
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Sedang Mengambil Data");
+        progressDialog.setIndeterminate(false);
+        progressDialog.setCanceledOnTouchOutside(true);
+        progressDialog.setCancelable(true);
+        progressDialog.show();
     }
 }
