@@ -48,34 +48,6 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin=findViewById(R.id.btnlogin);
         dialogView=new CustomDialogView(this);
         sharedPreferenceManager=new SharedPreferenceManager(this);
-//        btnLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String txtEmail=email.getText().toString();
-//                String txtPassword=password.getText().toString();
-//
-//                if (TextUtils.isEmpty(txtEmail)||TextUtils.isEmpty(txtPassword))
-//                    Toast.makeText(LoginActivity.this, "Email dan Password Harus diisi", Toast.LENGTH_SHORT).show();
-//                else{
-//                    dialogView.showDialog();
-//                    mAuth.signInWithEmailAndPassword(txtEmail,txtPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<AuthResult> task) {
-//                            if (task.isSuccessful()){
-//                                Intent intent=new Intent(LoginActivity.this, MainActivity.class);
-//                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-//                                startActivity(intent);
-//                                dialogView.hideDialog();
-//                                finish();
-//                            }else{
-//                                Toast.makeText(LoginActivity.this, "Email atau Password Salah", Toast.LENGTH_SHORT).show();
-//                                dialogView.hideDialog();
-//                            }
-//                        }
-//                    });
-//                }
-//            }
-//        });
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,7 +91,6 @@ public class LoginActivity extends AppCompatActivity {
                         Log.d("datalogin", "onDataChange: "+loginModel.getBagian());
                         if (loginModel.getBagian().equalsIgnoreCase("bidyan")){
                             Log.d("datalogin", "onDataChange: bidyan");
-
                             intent.putExtra("username",loginModel.getUsername());
                             intent.putExtra("bagian",loginModel.getBagian());
                             intent.putExtra("nama",loginModel.getNamaLengkap());
@@ -142,6 +113,28 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d("data", "onDataChange: supir");
                         }if (loginModel.getBagian().equalsIgnoreCase("ip2")){
                             Log.d("data", "onDataChange: ip2");
+                            intent.putExtra("username",loginModel.getUsername());
+                            intent.putExtra("bagian",loginModel.getBagian());
+                            intent.putExtra("nama",loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_USERNAME,loginModel.getUsername());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_BAGIAN,loginModel.getBagian());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_NAMA,loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPBoolean(sharedPreferenceManager.SP_SUDAH_LOGIN,true);
+                            startActivity(intent);
+                            finish();
+                        }
+                        if (loginModel.getBagian().equalsIgnoreCase("asd")){
+                            intent.putExtra("username",loginModel.getUsername());
+                            intent.putExtra("bagian",loginModel.getBagian());
+                            intent.putExtra("nama",loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_USERNAME,loginModel.getUsername());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_BAGIAN,loginModel.getBagian());
+                            sharedPreferenceManager.saveSPString(sharedPreferenceManager.SP_NAMA,loginModel.getNamaLengkap());
+                            sharedPreferenceManager.saveSPBoolean(sharedPreferenceManager.SP_SUDAH_LOGIN,true);
+                            startActivity(intent);
+                            finish();
+                        }
+                        if (loginModel.getBagian().equalsIgnoreCase("super")){
                             intent.putExtra("username",loginModel.getUsername());
                             intent.putExtra("bagian",loginModel.getBagian());
                             intent.putExtra("nama",loginModel.getNamaLengkap());

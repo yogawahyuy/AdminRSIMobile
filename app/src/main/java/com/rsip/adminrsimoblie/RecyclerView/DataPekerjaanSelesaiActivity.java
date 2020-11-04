@@ -13,7 +13,6 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -24,36 +23,28 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rsip.adminrsimoblie.R;
+import com.rsip.adminrsimoblie.View.DetailPekerjaanIp2Activity;
 
 import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Handler;
 
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.rsip.adminrsimoblie.View.DetailPekerjaanIp2Activity;
-import com.rsip.adminrsimoblie.View.TambahDataPekerjaanIp2Activity;
-
-
-public class DataPekerjaanIp2Activity extends AppCompatActivity {
+public class DataPekerjaanSelesaiActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
 
-    private FloatingActionButton fab;
-    private DataPekerjaanIp2Adapter mAdapter;
+    private DataPekerjaanSelesaiAdapter mAdapter;
     private ProgressDialog progressDialog;
+    private ArrayList<DataPekerjaanSelesaiModel> modelList = new ArrayList<>();
 
-    private ArrayList<DataPekerjaanIp2Model> modelList = new ArrayList<>();
-
-    DatabaseReference reference= FirebaseDatabase.getInstance().getReference("IPPSRS").child("DataPekerjaan");
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("IPPSRS").child("PekerjaanSelesai");
     TextView emptyView;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_pekerjaan_ip2);
+        setContentView(R.layout.activity_data_pekerjaan_selesai);
 
         findViews();
         setAdapter();
@@ -63,23 +54,14 @@ public class DataPekerjaanIp2Activity extends AppCompatActivity {
 
     private void findViews() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DataPekerjaanIp2Activity.this, TambahDataPekerjaanIp2Activity.class));
-            }
-        });
-        readFromDatabase();
         emptyView=findViewById(R.id.empty_view);
-        emptyView.setVisibility(View.GONE);
+        readData();
         progresDialog();
     }
 
 
     private void setAdapter() {
-
-        mAdapter = new DataPekerjaanIp2Adapter(DataPekerjaanIp2Activity.this, modelList);
+        mAdapter = new DataPekerjaanSelesaiAdapter(DataPekerjaanSelesaiActivity.this, modelList);
 
         recyclerView.setHasFixedSize(true);
 
@@ -93,13 +75,13 @@ public class DataPekerjaanIp2Activity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
 
-        mAdapter.SetOnItemClickListener(new DataPekerjaanIp2Adapter.OnItemClickListener() {
+        mAdapter.SetOnItemClickListener(new DataPekerjaanSelesaiAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position, DataPekerjaanIp2Model model) {
+            public void onItemClick(View view, int position, DataPekerjaanSelesaiModel model) {
 
                 //handle item click events here
-               // Toast.makeText(DataPekerjaanIp2Activity.this, "Hey " + model.getTitle(), Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(DataPekerjaanIp2Activity.this, DetailPekerjaanIp2Activity.class);
+                //Toast.makeText(DataPekerjaanSelesaiActivity.this, "Hey " + model.getNamaPekerja(), Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(DataPekerjaanSelesaiActivity.this, DetailPekerjaanIp2Activity.class);
                 intent.putExtra("key",model.getKey());
                 intent.putExtra("namaPekerjaan",model.getNamaPekerjaan());
                 intent.putExtra("namaPekerja",model.getNamaPekerja());
@@ -108,7 +90,9 @@ public class DataPekerjaanIp2Activity extends AppCompatActivity {
                 intent.putExtra("jamPengerjaan",model.getJamPengerjaan());
                 intent.putExtra("tanggalPengerjaanOtomatis",model.getTanggalPengerjaanOtomatis());
                 intent.putExtra("jamPengerjaanOtomatis",model.getJamPengerjaanOtomatis());
-                intent.putExtra("ket","belum");
+                intent.putExtra("tanggalSelesaiOtomatis",model.getTanggalSelesaiOtomatis());
+                intent.putExtra("jamSelesaiOtomatis",model.getJamSelesaiOtomatis());
+                intent.putExtra("ket","selese");
                 startActivity(intent);
                 finish();
 
@@ -118,27 +102,23 @@ public class DataPekerjaanIp2Activity extends AppCompatActivity {
 
     }
 
-    private void readFromDatabase(){
-        reference.addValueEventListener(new ValueEventListener() {
+    private void readData(){
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    DataPekerjaanIp2Model dataPekerjaanIp2Model=dataSnapshot.getValue(DataPekerjaanIp2Model.class);
-                    dataPekerjaanIp2Model.setKey(dataSnapshot.getKey());
-                    if (dataPekerjaanIp2Model.getStatus().equalsIgnoreCase("no")) {
-                        modelList.add(dataPekerjaanIp2Model);
-                    }
+                    DataPekerjaanSelesaiModel dataPekerjaanSelesaiModel=dataSnapshot.getValue(DataPekerjaanSelesaiModel.class);
+                    dataPekerjaanSelesaiModel.setKey(dataSnapshot.getKey());
+                    modelList.add(dataPekerjaanSelesaiModel);
                     if (modelList.size()==0){
                         emptyView.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
                         progressDialog.dismiss();
-                    }else {
+                    }else{
                         emptyView.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                         progressDialog.dismiss();
                     }
-
-                    Log.d("dataa", "onDataChange: "+modelList.size());
                     setAdapter();
                 }
             }
@@ -158,6 +138,4 @@ public class DataPekerjaanIp2Activity extends AppCompatActivity {
         progressDialog.setCancelable(true);
         progressDialog.show();
     }
-
-
 }
