@@ -1,0 +1,1052 @@
+{
+  "response": [
+    {
+      "kd_poliklinikx": "U0024",
+      "nm_poliklinikx": "Hemodialisa",
+      "nip_dokterx": "D0000047",
+      "nm_dokterx": "Haidar Alatas, Dr., dr., Sp.PD-KGH",
+      "harix": "SENIN",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "Lab",
+      "nm_poliklinikx": "Laboratorium",
+      "nip_dokterx": "D0000113",
+      "nm_dokterx": "Dharma Koosgiarto, dr., Sp.PK.",
+      "harix": "SENIN",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.Fs",
+      "nm_poliklinikx": "Poli Fisioterapi",
+      "nip_dokterx": "D0000018",
+      "nm_dokterx": "Massita Dwi Yuliani, dr., Sp.KFR.",
+      "harix": "SENIN",
+      "jam_mulaix": "14:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000111",
+      "nm_dokterx": "Fajar Alam Sukma Raharja, dr., Sp.OG.",
+      "harix": "SENIN",
+      "jam_mulaix": "13:05",
+      "jam_selesaix": "16:30"
+    },
+    {
+      "kd_poliklinikx": "P.Rd",
+      "nm_poliklinikx": "Poli Radiologi",
+      "nip_dokterx": "D0000010",
+      "nm_dokterx": "Wijaya Hadi Suryanto, dr., Sp.Rad.",
+      "harix": "SENIN",
+      "jam_mulaix": "16:10",
+      "jam_selesaix": "17:30"
+    },
+    {
+      "kd_poliklinikx": "P.SA",
+      "nm_poliklinikx": "Poli Spesialis Anak",
+      "nip_dokterx": "D0000020",
+      "nm_dokterx": "Supriyanto, dr., Sp.A.",
+      "harix": "SENIN",
+      "jam_mulaix": "15:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.SA",
+      "nm_poliklinikx": "Poli Spesialis Anak",
+      "nip_dokterx": "D0000127",
+      "nm_dokterx": "Fresti Oktanindi, dr., M.Sc., Sp.A",
+      "harix": "SENIN",
+      "jam_mulaix": "18:15",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SB",
+      "nm_poliklinikx": "Poli Spesialis Bedah",
+      "nip_dokterx": "D0000083",
+      "nm_dokterx": "Yuhantoro Budi H.S, dr., Sp.B., M.Kes.",
+      "harix": "SENIN",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "SBU",
+      "nm_poliklinikx": "Poli Spesialis Bedah Urologi",
+      "nip_dokterx": "D0000112",
+      "nm_dokterx": "Priyo Prasetyo, dr., Sp.U.",
+      "harix": "SENIN",
+      "jam_mulaix": "14:15",
+      "jam_selesaix": "14:55"
+    },
+    {
+      "kd_poliklinikx": "P.FR",
+      "nm_poliklinikx": "Poli Spesialis Forensik",
+      "nip_dokterx": "D0000076",
+      "nm_dokterx": "Abdul Hakim Nitiprodjo, dr., Sp.F.",
+      "harix": "SENIN",
+      "jam_mulaix": "10:00",
+      "jam_selesaix": "13:00"
+    },
+    {
+      "kd_poliklinikx": "P.SJ",
+      "nm_poliklinikx": "Poli Spesialis Jantung",
+      "nip_dokterx": "D0000044",
+      "nm_dokterx": "Lima Peni, dr., Sp.JP.",
+      "harix": "SENIN",
+      "jam_mulaix": "14:00",
+      "jam_selesaix": "18:00"
+    },
+    {
+      "kd_poliklinikx": "P.OT",
+      "nm_poliklinikx": "Poli Spesialis Orthopedi",
+      "nip_dokterx": "D0000104",
+      "nm_dokterx": "Hidayat Kussugiharso Wibowo, dr., Sp.OT.",
+      "harix": "SENIN",
+      "jam_mulaix": "12:30",
+      "jam_selesaix": "14:45"
+    },
+    {
+      "kd_poliklinikx": "P.SP",
+      "nm_poliklinikx": "Poli Spesialis Paru",
+      "nip_dokterx": "D0000016",
+      "nm_dokterx": "Indah Rahmawati, dr., Sp.P",
+      "harix": "SENIN",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "13:55"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000103",
+      "nm_dokterx": "Tiara Paramita Poernomo, dr. , Sp.PD",
+      "harix": "SENIN",
+      "jam_mulaix": "11:00",
+      "jam_selesaix": "13:00"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000024",
+      "nm_dokterx": "Yunanto Dwi Nugroho, dr., Sp.PD.",
+      "harix": "SENIN",
+      "jam_mulaix": "14:15",
+      "jam_selesaix": "18:30"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000126",
+      "nm_dokterx": "Kukuh Prasetyo, dr.,Sp.PD",
+      "harix": "SENIN",
+      "jam_mulaix": "16:00",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000021",
+      "nm_dokterx": "Muttaqien Pramudigdo, dr., Sp.S.",
+      "harix": "SENIN",
+      "jam_mulaix": "15:30",
+      "jam_selesaix": "19:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000015",
+      "nm_dokterx": "Hernawan, dr., Sp.S",
+      "harix": "SENIN",
+      "jam_mulaix": "17:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "P.STH",
+      "nm_poliklinikx": "Poli Spesialis THT",
+      "nip_dokterx": "D0000084",
+      "nm_dokterx": "Mohammad Nurrizki Haitamy, dr., Sp.THT-KL",
+      "harix": "SENIN",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "P.Umm",
+      "nm_poliklinikx": "Poli Umum",
+      "nip_dokterx": "D000012",
+      "nm_dokterx": "Edi Purwanto, dr., MARS",
+      "harix": "SENIN",
+      "jam_mulaix": "07:00",
+      "jam_selesaix": "11:00"
+    },
+    {
+      "kd_poliklinikx": "U0024",
+      "nm_poliklinikx": "Hemodialisa",
+      "nip_dokterx": "D0000047",
+      "nm_dokterx": "Haidar Alatas, Dr., dr., Sp.PD-KGH",
+      "harix": "SELASA",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "Lab",
+      "nm_poliklinikx": "Laboratorium",
+      "nip_dokterx": "D0000113",
+      "nm_dokterx": "Dharma Koosgiarto, dr., Sp.PK.",
+      "harix": "SELASA",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.Fs",
+      "nm_poliklinikx": "Poli Fisioterapi",
+      "nip_dokterx": "D0000018",
+      "nm_dokterx": "Massita Dwi Yuliani, dr., Sp.KFR.",
+      "harix": "SELASA",
+      "jam_mulaix": "14:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.Gg",
+      "nm_poliklinikx": "Poli Gigi",
+      "nip_dokterx": "D0000013",
+      "nm_dokterx": "H. Haryono, drg., MMR.",
+      "harix": "SELASA",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000014",
+      "nm_dokterx": "Hardjono Purwadhi, dr., Sp.OG.",
+      "harix": "SELASA",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000111",
+      "nm_dokterx": "Fajar Alam Sukma Raharja, dr., Sp.OG.",
+      "harix": "SELASA",
+      "jam_mulaix": "13:05",
+      "jam_selesaix": "16:30"
+    },
+    {
+      "kd_poliklinikx": "P.Rd",
+      "nm_poliklinikx": "Poli Radiologi",
+      "nip_dokterx": "D0000010",
+      "nm_dokterx": "Wijaya Hadi Suryanto, dr., Sp.Rad.",
+      "harix": "SELASA",
+      "jam_mulaix": "16:10",
+      "jam_selesaix": "17:30"
+    },
+    {
+      "kd_poliklinikx": "P.SA",
+      "nm_poliklinikx": "Poli Spesialis Anak",
+      "nip_dokterx": "D0000127",
+      "nm_dokterx": "Fresti Oktanindi, dr., M.Sc., Sp.A",
+      "harix": "SELASA",
+      "jam_mulaix": "18:15",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SB",
+      "nm_poliklinikx": "Poli Spesialis Bedah",
+      "nip_dokterx": "D0000129",
+      "nm_dokterx": "Budi Santosa, dr., Sp.B",
+      "harix": "SELASA",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "11:00"
+    },
+    {
+      "kd_poliklinikx": "P.SB",
+      "nm_poliklinikx": "Poli Spesialis Bedah",
+      "nip_dokterx": "D0000083",
+      "nm_dokterx": "Yuhantoro Budi H.S, dr., Sp.B., M.Kes.",
+      "harix": "SELASA",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "SBU",
+      "nm_poliklinikx": "Poli Spesialis Bedah Urologi",
+      "nip_dokterx": "D0000112",
+      "nm_dokterx": "Priyo Prasetyo, dr., Sp.U.",
+      "harix": "SELASA",
+      "jam_mulaix": "18:15",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "P.SM",
+      "nm_poliklinikx": "Poli Spesialis Mata",
+      "nip_dokterx": "D0000101",
+      "nm_dokterx": "Dian Putriani, dr., Sp.M",
+      "harix": "SELASA",
+      "jam_mulaix": "13:00",
+      "jam_selesaix": "16:00"
+    },
+    {
+      "kd_poliklinikx": "P.SP",
+      "nm_poliklinikx": "Poli Spesialis Paru",
+      "nip_dokterx": "D0000016",
+      "nm_dokterx": "Indah Rahmawati, dr., Sp.P",
+      "harix": "SELASA",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "13:55"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000024",
+      "nm_dokterx": "Yunanto Dwi Nugroho, dr., Sp.PD.",
+      "harix": "SELASA",
+      "jam_mulaix": "14:15",
+      "jam_selesaix": "18:30"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000126",
+      "nm_dokterx": "Kukuh Prasetyo, dr.,Sp.PD",
+      "harix": "SELASA",
+      "jam_mulaix": "16:00",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000021",
+      "nm_dokterx": "Muttaqien Pramudigdo, dr., Sp.S.",
+      "harix": "SELASA",
+      "jam_mulaix": "15:30",
+      "jam_selesaix": "19:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000015",
+      "nm_dokterx": "Hernawan, dr., Sp.S",
+      "harix": "SELASA",
+      "jam_mulaix": "17:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "P.STH",
+      "nm_poliklinikx": "Poli Spesialis THT",
+      "nip_dokterx": "D0000084",
+      "nm_dokterx": "Mohammad Nurrizki Haitamy, dr., Sp.THT-KL",
+      "harix": "SELASA",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "P.STH",
+      "nm_poliklinikx": "Poli Spesialis THT",
+      "nip_dokterx": "D0000128",
+      "nm_dokterx": "Hariyudo, dr., Sp.THT-KL",
+      "harix": "SELASA",
+      "jam_mulaix": "14:20",
+      "jam_selesaix": "15:30"
+    },
+    {
+      "kd_poliklinikx": "P.Umm",
+      "nm_poliklinikx": "Poli Umum",
+      "nip_dokterx": "140.06.07.09",
+      "nm_dokterx": "Erri Wulandari, dr. ",
+      "harix": "SELASA",
+      "jam_mulaix": "07:00",
+      "jam_selesaix": "14:00"
+    },
+    {
+      "kd_poliklinikx": "U0024",
+      "nm_poliklinikx": "Hemodialisa",
+      "nip_dokterx": "D0000047",
+      "nm_dokterx": "Haidar Alatas, Dr., dr., Sp.PD-KGH",
+      "harix": "RABU",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "Lab",
+      "nm_poliklinikx": "Laboratorium",
+      "nip_dokterx": "D0000113",
+      "nm_dokterx": "Dharma Koosgiarto, dr., Sp.PK.",
+      "harix": "RABU",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.Fs",
+      "nm_poliklinikx": "Poli Fisioterapi",
+      "nip_dokterx": "D0000018",
+      "nm_dokterx": "Massita Dwi Yuliani, dr., Sp.KFR.",
+      "harix": "RABU",
+      "jam_mulaix": "14:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000111",
+      "nm_dokterx": "Fajar Alam Sukma Raharja, dr., Sp.OG.",
+      "harix": "RABU",
+      "jam_mulaix": "00:00",
+      "jam_selesaix": "SELESAI"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000051",
+      "nm_dokterx": "Amin Nur Rohim, dr., Sp.OG.",
+      "harix": "RABU",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "13:30"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000111",
+      "nm_dokterx": "Fajar Alam Sukma Raharja, dr., Sp.OG.",
+      "harix": "RABU",
+      "jam_mulaix": "13:05",
+      "jam_selesaix": "16:30"
+    },
+    {
+      "kd_poliklinikx": "P.SA",
+      "nm_poliklinikx": "Poli Spesialis Anak",
+      "nip_dokterx": "D0000020",
+      "nm_dokterx": "Supriyanto, dr., Sp.A.",
+      "harix": "RABU",
+      "jam_mulaix": "15:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.SA",
+      "nm_poliklinikx": "Poli Spesialis Anak",
+      "nip_dokterx": "D0000127",
+      "nm_dokterx": "Fresti Oktanindi, dr., M.Sc., Sp.A",
+      "harix": "RABU",
+      "jam_mulaix": "18:15",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SB",
+      "nm_poliklinikx": "Poli Spesialis Bedah",
+      "nip_dokterx": "D0000129",
+      "nm_dokterx": "Budi Santosa, dr., Sp.B",
+      "harix": "RABU",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "11:00"
+    },
+    {
+      "kd_poliklinikx": "P.SB",
+      "nm_poliklinikx": "Poli Spesialis Bedah",
+      "nip_dokterx": "D0000083",
+      "nm_dokterx": "Yuhantoro Budi H.S, dr., Sp.B., M.Kes.",
+      "harix": "RABU",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "SBU",
+      "nm_poliklinikx": "Poli Spesialis Bedah Urologi",
+      "nip_dokterx": "D0000112",
+      "nm_dokterx": "Priyo Prasetyo, dr., Sp.U.",
+      "harix": "RABU",
+      "jam_mulaix": "14:15",
+      "jam_selesaix": "14:55"
+    },
+    {
+      "kd_poliklinikx": "P.FR",
+      "nm_poliklinikx": "Poli Spesialis Forensik",
+      "nip_dokterx": "D0000076",
+      "nm_dokterx": "Abdul Hakim Nitiprodjo, dr., Sp.F.",
+      "harix": "RABU",
+      "jam_mulaix": "10:00",
+      "jam_selesaix": "13:00"
+    },
+    {
+      "kd_poliklinikx": "P.OT",
+      "nm_poliklinikx": "Poli Spesialis Orthopedi",
+      "nip_dokterx": "D0000104",
+      "nm_dokterx": "Hidayat Kussugiharso Wibowo, dr., Sp.OT.",
+      "harix": "RABU",
+      "jam_mulaix": "12:30",
+      "jam_selesaix": "14:45"
+    },
+    {
+      "kd_poliklinikx": "P.SP",
+      "nm_poliklinikx": "Poli Spesialis Paru",
+      "nip_dokterx": "D0000016",
+      "nm_dokterx": "Indah Rahmawati, dr., Sp.P",
+      "harix": "RABU",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "13:55"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000103",
+      "nm_dokterx": "Tiara Paramita Poernomo, dr. , Sp.PD",
+      "harix": "RABU",
+      "jam_mulaix": "11:00",
+      "jam_selesaix": "13:00"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000024",
+      "nm_dokterx": "Yunanto Dwi Nugroho, dr., Sp.PD.",
+      "harix": "RABU",
+      "jam_mulaix": "14:15",
+      "jam_selesaix": "18:30"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000126",
+      "nm_dokterx": "Kukuh Prasetyo, dr.,Sp.PD",
+      "harix": "RABU",
+      "jam_mulaix": "16:00",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000021",
+      "nm_dokterx": "Muttaqien Pramudigdo, dr., Sp.S.",
+      "harix": "RABU",
+      "jam_mulaix": "15:30",
+      "jam_selesaix": "19:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000015",
+      "nm_dokterx": "Hernawan, dr., Sp.S",
+      "harix": "RABU",
+      "jam_mulaix": "17:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "P.STH",
+      "nm_poliklinikx": "Poli Spesialis THT",
+      "nip_dokterx": "D0000084",
+      "nm_dokterx": "Mohammad Nurrizki Haitamy, dr., Sp.THT-KL",
+      "harix": "RABU",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "P.Umm",
+      "nm_poliklinikx": "Poli Umum",
+      "nip_dokterx": "D000012",
+      "nm_dokterx": "Edi Purwanto, dr., MARS",
+      "harix": "RABU",
+      "jam_mulaix": "07:00",
+      "jam_selesaix": "14:00"
+    },
+    {
+      "kd_poliklinikx": "U0024",
+      "nm_poliklinikx": "Hemodialisa",
+      "nip_dokterx": "D0000047",
+      "nm_dokterx": "Haidar Alatas, Dr., dr., Sp.PD-KGH",
+      "harix": "KAMIS",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "Lab",
+      "nm_poliklinikx": "Laboratorium",
+      "nip_dokterx": "D0000113",
+      "nm_dokterx": "Dharma Koosgiarto, dr., Sp.PK.",
+      "harix": "KAMIS",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.Fs",
+      "nm_poliklinikx": "Poli Fisioterapi",
+      "nip_dokterx": "D0000018",
+      "nm_dokterx": "Massita Dwi Yuliani, dr., Sp.KFR.",
+      "harix": "KAMIS",
+      "jam_mulaix": "14:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.Gg",
+      "nm_poliklinikx": "Poli Gigi",
+      "nip_dokterx": "D0000013",
+      "nm_dokterx": "H. Haryono, drg., MMR.",
+      "harix": "KAMIS",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000014",
+      "nm_dokterx": "Hardjono Purwadhi, dr., Sp.OG.",
+      "harix": "KAMIS",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000111",
+      "nm_dokterx": "Fajar Alam Sukma Raharja, dr., Sp.OG.",
+      "harix": "KAMIS",
+      "jam_mulaix": "13:05",
+      "jam_selesaix": "16:30"
+    },
+    {
+      "kd_poliklinikx": "P.Rd",
+      "nm_poliklinikx": "Poli Radiologi",
+      "nip_dokterx": "D0000010",
+      "nm_dokterx": "Wijaya Hadi Suryanto, dr., Sp.Rad.",
+      "harix": "KAMIS",
+      "jam_mulaix": "16:25",
+      "jam_selesaix": "17:25"
+    },
+    {
+      "kd_poliklinikx": "P.SA",
+      "nm_poliklinikx": "Poli Spesialis Anak",
+      "nip_dokterx": "D0000127",
+      "nm_dokterx": "Fresti Oktanindi, dr., M.Sc., Sp.A",
+      "harix": "KAMIS",
+      "jam_mulaix": "18:15",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SB",
+      "nm_poliklinikx": "Poli Spesialis Bedah",
+      "nip_dokterx": "D0000083",
+      "nm_dokterx": "Yuhantoro Budi H.S, dr., Sp.B., M.Kes.",
+      "harix": "KAMIS",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "SBU",
+      "nm_poliklinikx": "Poli Spesialis Bedah Urologi",
+      "nip_dokterx": "D0000112",
+      "nm_dokterx": "Priyo Prasetyo, dr., Sp.U.",
+      "harix": "KAMIS",
+      "jam_mulaix": "18:15",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "P.SJ",
+      "nm_poliklinikx": "Poli Spesialis Jantung",
+      "nip_dokterx": "D0000044",
+      "nm_dokterx": "Lima Peni, dr., Sp.JP.",
+      "harix": "KAMIS",
+      "jam_mulaix": "14:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.SM",
+      "nm_poliklinikx": "Poli Spesialis Mata",
+      "nip_dokterx": "D0000101",
+      "nm_dokterx": "Dian Putriani, dr., Sp.M",
+      "harix": "KAMIS",
+      "jam_mulaix": "13:00",
+      "jam_selesaix": "16:00"
+    },
+    {
+      "kd_poliklinikx": "P.SP",
+      "nm_poliklinikx": "Poli Spesialis Paru",
+      "nip_dokterx": "D0000016",
+      "nm_dokterx": "Indah Rahmawati, dr., Sp.P",
+      "harix": "KAMIS",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "13:55"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000024",
+      "nm_dokterx": "Yunanto Dwi Nugroho, dr., Sp.PD.",
+      "harix": "KAMIS",
+      "jam_mulaix": "14:15",
+      "jam_selesaix": "18:30"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000126",
+      "nm_dokterx": "Kukuh Prasetyo, dr.,Sp.PD",
+      "harix": "KAMIS",
+      "jam_mulaix": "16:00",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000021",
+      "nm_dokterx": "Muttaqien Pramudigdo, dr., Sp.S.",
+      "harix": "KAMIS",
+      "jam_mulaix": "15:30",
+      "jam_selesaix": "19:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000015",
+      "nm_dokterx": "Hernawan, dr., Sp.S",
+      "harix": "KAMIS",
+      "jam_mulaix": "17:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "P.STH",
+      "nm_poliklinikx": "Poli Spesialis THT",
+      "nip_dokterx": "D0000084",
+      "nm_dokterx": "Mohammad Nurrizki Haitamy, dr., Sp.THT-KL",
+      "harix": "KAMIS",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "P.STH",
+      "nm_poliklinikx": "Poli Spesialis THT",
+      "nip_dokterx": "D0000128",
+      "nm_dokterx": "Hariyudo, dr., Sp.THT-KL",
+      "harix": "KAMIS",
+      "jam_mulaix": "14:20",
+      "jam_selesaix": "15:30"
+    },
+    {
+      "kd_poliklinikx": "P.Umm",
+      "nm_poliklinikx": "Poli Umum",
+      "nip_dokterx": "221.12.29.01",
+      "nm_dokterx": "Rika Retnoningsih, dr.",
+      "harix": "KAMIS",
+      "jam_mulaix": "07:00",
+      "jam_selesaix": "14:00"
+    },
+    {
+      "kd_poliklinikx": "U0024",
+      "nm_poliklinikx": "Hemodialisa",
+      "nip_dokterx": "D0000047",
+      "nm_dokterx": "Haidar Alatas, Dr., dr., Sp.PD-KGH",
+      "harix": "JUMAT",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "Lab",
+      "nm_poliklinikx": "Laboratorium",
+      "nip_dokterx": "D0000113",
+      "nm_dokterx": "Dharma Koosgiarto, dr., Sp.PK.",
+      "harix": "JUMAT",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.Fs",
+      "nm_poliklinikx": "Poli Fisioterapi",
+      "nip_dokterx": "D0000018",
+      "nm_dokterx": "Massita Dwi Yuliani, dr., Sp.KFR.",
+      "harix": "JUMAT",
+      "jam_mulaix": "14:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.Gg",
+      "nm_poliklinikx": "Poli Gigi",
+      "nip_dokterx": "D0000013",
+      "nm_dokterx": "H. Haryono, drg., MMR.",
+      "harix": "JUMAT",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000051",
+      "nm_dokterx": "Amin Nur Rohim, dr., Sp.OG.",
+      "harix": "JUMAT",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "14:30"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000051",
+      "nm_dokterx": "Amin Nur Rohim, dr., Sp.OG.",
+      "harix": "JUMAT",
+      "jam_mulaix": "10:00",
+      "jam_selesaix": "SELESAI"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000111",
+      "nm_dokterx": "Fajar Alam Sukma Raharja, dr., Sp.OG.",
+      "harix": "JUMAT",
+      "jam_mulaix": "13:05",
+      "jam_selesaix": "16:30"
+    },
+    {
+      "kd_poliklinikx": "P.SA",
+      "nm_poliklinikx": "Poli Spesialis Anak",
+      "nip_dokterx": "D0000127",
+      "nm_dokterx": "Fresti Oktanindi, dr., M.Sc., Sp.A",
+      "harix": "JUMAT",
+      "jam_mulaix": "18:05",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SB",
+      "nm_poliklinikx": "Poli Spesialis Bedah",
+      "nip_dokterx": "D0000129",
+      "nm_dokterx": "Budi Santosa, dr., Sp.B",
+      "harix": "JUMAT",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "11:00"
+    },
+    {
+      "kd_poliklinikx": "P.SB",
+      "nm_poliklinikx": "Poli Spesialis Bedah",
+      "nip_dokterx": "D0000083",
+      "nm_dokterx": "Yuhantoro Budi H.S, dr., Sp.B., M.Kes.",
+      "harix": "JUMAT",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "SBU",
+      "nm_poliklinikx": "Poli Spesialis Bedah Urologi",
+      "nip_dokterx": "D0000112",
+      "nm_dokterx": "Priyo Prasetyo, dr., Sp.U.",
+      "harix": "JUMAT",
+      "jam_mulaix": "11:29",
+      "jam_selesaix": "14:55"
+    },
+    {
+      "kd_poliklinikx": "P.FR",
+      "nm_poliklinikx": "Poli Spesialis Forensik",
+      "nip_dokterx": "D0000076",
+      "nm_dokterx": "Abdul Hakim Nitiprodjo, dr., Sp.F.",
+      "harix": "JUMAT",
+      "jam_mulaix": "10:00",
+      "jam_selesaix": "13:00"
+    },
+    {
+      "kd_poliklinikx": "P.SM",
+      "nm_poliklinikx": "Poli Spesialis Mata",
+      "nip_dokterx": "D0000102",
+      "nm_dokterx": "Teguh Anamani, dr., Sp.M",
+      "harix": "JUMAT",
+      "jam_mulaix": "15:05",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.OT",
+      "nm_poliklinikx": "Poli Spesialis Orthopedi",
+      "nip_dokterx": "D0000104",
+      "nm_dokterx": "Hidayat Kussugiharso Wibowo, dr., Sp.OT.",
+      "harix": "JUMAT",
+      "jam_mulaix": "12:30",
+      "jam_selesaix": "14:45"
+    },
+    {
+      "kd_poliklinikx": "P.SP",
+      "nm_poliklinikx": "Poli Spesialis Paru",
+      "nip_dokterx": "D0000016",
+      "nm_dokterx": "Indah Rahmawati, dr., Sp.P",
+      "harix": "JUMAT",
+      "jam_mulaix": "09:00",
+      "jam_selesaix": "13:55"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000103",
+      "nm_dokterx": "Tiara Paramita Poernomo, dr. , Sp.PD",
+      "harix": "JUMAT",
+      "jam_mulaix": "11:00",
+      "jam_selesaix": "13:00"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000024",
+      "nm_dokterx": "Yunanto Dwi Nugroho, dr., Sp.PD.",
+      "harix": "JUMAT",
+      "jam_mulaix": "14:15",
+      "jam_selesaix": "18:30"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000090",
+      "nm_dokterx": "Suharno dr. , Sp.PD",
+      "harix": "JUMAT",
+      "jam_mulaix": "15:15",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000126",
+      "nm_dokterx": "Kukuh Prasetyo, dr.,Sp.PD",
+      "harix": "JUMAT",
+      "jam_mulaix": "16:00",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000021",
+      "nm_dokterx": "Muttaqien Pramudigdo, dr., Sp.S.",
+      "harix": "JUMAT",
+      "jam_mulaix": "15:30",
+      "jam_selesaix": "19:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000015",
+      "nm_dokterx": "Hernawan, dr., Sp.S",
+      "harix": "JUMAT",
+      "jam_mulaix": "17:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "P.STH",
+      "nm_poliklinikx": "Poli Spesialis THT",
+      "nip_dokterx": "D0000084",
+      "nm_dokterx": "Mohammad Nurrizki Haitamy, dr., Sp.THT-KL",
+      "harix": "JUMAT",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "P.STH",
+      "nm_poliklinikx": "Poli Spesialis THT",
+      "nip_dokterx": "D0000128",
+      "nm_dokterx": "Hariyudo, dr., Sp.THT-KL",
+      "harix": "JUMAT",
+      "jam_mulaix": "14:20",
+      "jam_selesaix": "15:30"
+    },
+    {
+      "kd_poliklinikx": "P.Umm",
+      "nm_poliklinikx": "Poli Umum",
+      "nip_dokterx": "D0000125",
+      "nm_dokterx": "Nadila Anindita., dr",
+      "harix": "JUMAT",
+      "jam_mulaix": "07:00",
+      "jam_selesaix": "14:00"
+    },
+    {
+      "kd_poliklinikx": "U0024",
+      "nm_poliklinikx": "Hemodialisa",
+      "nip_dokterx": "D0000047",
+      "nm_dokterx": "Haidar Alatas, Dr., dr., Sp.PD-KGH",
+      "harix": "SABTU",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "21:00"
+    },
+    {
+      "kd_poliklinikx": "Lab",
+      "nm_poliklinikx": "Laboratorium",
+      "nip_dokterx": "D0000113",
+      "nm_dokterx": "Dharma Koosgiarto, dr., Sp.PK.",
+      "harix": "SABTU",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.Fs",
+      "nm_poliklinikx": "Poli Fisioterapi",
+      "nip_dokterx": "D0000018",
+      "nm_dokterx": "Massita Dwi Yuliani, dr., Sp.KFR.",
+      "harix": "SABTU",
+      "jam_mulaix": "14:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.KDK",
+      "nm_poliklinikx": "Poli Kebidanan Dan Kandungan",
+      "nip_dokterx": "D0000111",
+      "nm_dokterx": "Fajar Alam Sukma Raharja, dr., Sp.OG.",
+      "harix": "SABTU",
+      "jam_mulaix": "13:05",
+      "jam_selesaix": "16:30"
+    },
+    {
+      "kd_poliklinikx": "P.SA",
+      "nm_poliklinikx": "Poli Spesialis Anak",
+      "nip_dokterx": "D0000020",
+      "nm_dokterx": "Supriyanto, dr., Sp.A.",
+      "harix": "SABTU",
+      "jam_mulaix": "15:00",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.SA",
+      "nm_poliklinikx": "Poli Spesialis Anak",
+      "nip_dokterx": "D0000127",
+      "nm_dokterx": "Fresti Oktanindi, dr., M.Sc., Sp.A",
+      "harix": "SABTU",
+      "jam_mulaix": "17:00",
+      "jam_selesaix": "20:00"
+    },
+    {
+      "kd_poliklinikx": "P.SM",
+      "nm_poliklinikx": "Poli Spesialis Mata",
+      "nip_dokterx": "D0000102",
+      "nm_dokterx": "Teguh Anamani, dr., Sp.M",
+      "harix": "SABTU",
+      "jam_mulaix": "15:05",
+      "jam_selesaix": "17:00"
+    },
+    {
+      "kd_poliklinikx": "P.SPD",
+      "nm_poliklinikx": "Poli Spesialis Penyakit Dalam",
+      "nip_dokterx": "D0000024",
+      "nm_dokterx": "Yunanto Dwi Nugroho, dr., Sp.PD.",
+      "harix": "SABTU",
+      "jam_mulaix": "14:15",
+      "jam_selesaix": "16:00"
+    },
+    {
+      "kd_poliklinikx": "P.SS",
+      "nm_poliklinikx": "Poli Spesialis Syaraf",
+      "nip_dokterx": "D0000021",
+      "nm_dokterx": "Muttaqien Pramudigdo, dr., Sp.S.",
+      "harix": "SABTU",
+      "jam_mulaix": "15:30",
+      "jam_selesaix": "19:00"
+    },
+    {
+      "kd_poliklinikx": "P.STH",
+      "nm_poliklinikx": "Poli Spesialis THT",
+      "nip_dokterx": "D0000084",
+      "nm_dokterx": "Mohammad Nurrizki Haitamy, dr., Sp.THT-KL",
+      "harix": "SABTU",
+      "jam_mulaix": "08:00",
+      "jam_selesaix": "12:00"
+    },
+    {
+      "kd_poliklinikx": "P.Umm",
+      "nm_poliklinikx": "Poli Umum",
+      "nip_dokterx": "058.96.30.09",
+      "nm_dokterx": "Rena Susilo, dr.",
+      "harix": "SABTU",
+      "jam_mulaix": "07:00",
+      "jam_selesaix": "14:00"
+    }
+  ],
+  "metadata": {
+    "message": "Ok",
+    "code": "200"
+  }
+}

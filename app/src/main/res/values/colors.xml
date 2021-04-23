@@ -6,4 +6,8 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="green">#81C784</color>
     <color name="colorGREY">#515151</color>
+    <color name="BiruBPJS">#1873bc</color>
+    <color name="birumuda">#FF14A5D1</color>
+    <color name="redAlert">#dc3545</color>
+    <color name="yellow">#FFC107</color>
 </resources>

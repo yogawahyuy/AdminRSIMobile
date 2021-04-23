@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.LandingLiatKeluhanActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/rel_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/logo3" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="60dp"
+                        android:src="@drawable/akreditasi" />
+
+
+                </androidx.appcompat.widget.Toolbar>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rel_titlebook"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_below="@id/rel_toolbar"
+                android:background="@color/colorPrimaryDark"
+                >
+                <TextView
+                    android:id="@+id/text_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pencarian Keluhan"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:textColor="@android:color/white"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_landing_jadwal_dokter"
+                android:layout_below="@id/rel_titlebook"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="80dp"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="1dp"
+                    android:elevation="8dp"
+                    android:divider="@android:color/black"
+                    android:dividerHeight="0.0px"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    android:layout_marginBottom="13dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp">
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Pilih Pencarian"
+                                android:textColor="@android:color/black"
+                                android:fontFamily="@font/bookmanoldstyle"
+                                android:textSize="16sp"
+                                android:gravity="center"/>
+
+                            <RadioGroup
+                                android:id="@+id/radGroup_keluhan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:background="@drawable/bg_templatewhite">
+                                <RadioButton
+                                    android:id="@+id/radioBtnBaca"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Dibaca"
+                                    android:background="@color/BiruBPJS"
+                                    android:layout_weight="1"
+                                    android:textColor="@android:color/white"
+                                    android:buttonTint="@color/BiruBPJS"
+                                    />
+
+                                <RadioButton
+                                    android:id="@+id/radioBtnBelumBaca"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/holo_purple"
+                                    android:textColor="@android:color/white"
+                                    android:buttonTint="@android:color/holo_purple"
+                                    android:layout_weight="1"
+                                    android:text="Belum dibaca"/>
+                                <RadioButton
+                                    android:id="@+id/radioBtnSemua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/yellow"
+                                    android:textColor="@android:color/white"
+                                    android:buttonTint="@color/yellow"
+                                    android:layout_weight="1"
+                                    android:text="Semua"/>
+                            </RadioGroup>
+                        </LinearLayout>
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

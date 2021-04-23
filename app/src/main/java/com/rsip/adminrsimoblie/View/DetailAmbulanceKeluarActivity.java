@@ -118,20 +118,21 @@ public class DetailAmbulanceKeluarActivity extends AppCompatActivity {
     }
 
     private void upadteDataMobilKeluar(){
-        DatabaseReference referenceMobilKeluar=FirebaseDatabase.getInstance().getReference("Driver").child("MobilKeluar");
-        HashMap<String,Object> hashMap=new HashMap<>();
-        hashMap.put("NoPlat",intent.getStringExtra("NoPlat"));
-        hashMap.put("driver",intent.getStringExtra("driver"));
-        hashMap.put("jamInput",intent.getStringExtra("jamInput"));
-        hashMap.put("jamOtomatis",intent.getStringExtra("jamOtomatis"));
-        hashMap.put("jarak",intent.getStringExtra("jarak"));
-        hashMap.put("jenisKendaraan",intent.getStringExtra("jenisKendaraan"));
-        hashMap.put("merkKendaraan",intent.getStringExtra("merkKendaraan"));
-        hashMap.put("status","ready");
-        hashMap.put("tanggalInput",intent.getStringExtra("tanggalInput"));
-        hashMap.put("tanggalOtomatis",intent.getStringExtra("tanggalOtomatis"));
-        hashMap.put("tujuan",intent.getStringExtra("tujuan"));
-        referenceMobilKeluar.child(intent.getStringExtra("key")).setValue(hashMap);
+       DatabaseReference referenceMobilKeluar=FirebaseDatabase.getInstance().getReference("Driver").child("MobilKeluar");
+//        HashMap<String,Object> hashMap=new HashMap<>();
+//        hashMap.put("NoPlat",intent.getStringExtra("NoPlat"));
+//        hashMap.put("driver",intent.getStringExtra("driver"));
+//        hashMap.put("jamInput",intent.getStringExtra("jamInput"));
+//        hashMap.put("jamOtomatis",intent.getStringExtra("jamOtomatis"));
+//        hashMap.put("jarak",intent.getStringExtra("jarak"));
+//        hashMap.put("jenisKendaraan",intent.getStringExtra("jenisKendaraan"));
+//        hashMap.put("merkKendaraan",intent.getStringExtra("merkKendaraan"));
+//        hashMap.put("status","ready");
+//        hashMap.put("tanggalInput",intent.getStringExtra("tanggalInput"));
+//        hashMap.put("tanggalOtomatis",intent.getStringExtra("tanggalOtomatis"));
+//        hashMap.put("tujuan",intent.getStringExtra("tujuan"));
+//        referenceMobilKeluar.child(intent.getStringExtra("key")).setValue(hashMap);
+        referenceMobilKeluar.child(intent.getStringExtra("key")).removeValue();
     }
 
     private void getDataMobilAll(){

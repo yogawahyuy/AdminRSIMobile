@@ -25,6 +25,7 @@ import com.rsip.adminrsimoblie.Model.UserModel;
 import com.rsip.adminrsimoblie.R;
 import com.rsip.adminrsimoblie.RecyclerView.KeluhanModel;
 import com.rsip.adminrsimoblie.RecyclerView.ListKeluhanActivity;
+import com.rsip.adminrsimoblie.Util.SharedPreferenceManager;
 
 public class BalasKeluhanActivity extends AppCompatActivity {
     TextView nama,tanggal,kategori,unit,keluhan,balasan;
@@ -34,6 +35,7 @@ public class BalasKeluhanActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     DatabaseReference dbrefrence = FirebaseDatabase.getInstance().getReference();
     DatabaseReference reference;
+    SharedPreferenceManager sharedPreferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class BalasKeluhanActivity extends AppCompatActivity {
     }
 
     private void findView(){
+        sharedPreferenceManager=new SharedPreferenceManager(this);
         nama=findViewById(R.id.rec_text_nama);
         tanggal=findViewById(R.id.rec_text_tgl);
         kategori=findViewById(R.id.rec_text_kategori);
@@ -55,7 +58,7 @@ public class BalasKeluhanActivity extends AppCompatActivity {
         btnBalas=findViewById(R.id.btn_balas);
         intent=getIntent();
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-       reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        //reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
     }
 
     private void fillFromIntent(){
@@ -74,14 +77,15 @@ public class BalasKeluhanActivity extends AppCompatActivity {
                 //get nama pembalas
 
 
-                reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        UserModel userModel=snapshot.getValue(UserModel.class);
+//                reference.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        UserModel userModel=snapshot.getValue(UserModel.class);
 
                         KeluhanModel keluhanModel=new KeluhanModel();
-                        keluhanModel.setIdPembalas(firebaseUser.getUid());
-                        keluhanModel.setNamaPembalas(userModel.getUsername());
+                       // keluhanModel.setIdPembalas(firebaseUser.getUid());
+                        keluhanModel.setIdPembalas(sharedPreferenceManager.getSPUsername());
+                        keluhanModel.setNamaPembalas(sharedPreferenceManager.getSPNama());
                         keluhanModel.setNama(intent.getStringExtra("nama"));
                         keluhanModel.setTanggal(intent.getStringExtra("tanggal"));
                         keluhanModel.setKategori(intent.getStringExtra("kategori"));
@@ -100,17 +104,17 @@ public class BalasKeluhanActivity extends AppCompatActivity {
                             }
                         });
                         Log.d("balasKeluhan", "onDataChange: "+keluhanModel.getNamaPembalas());
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
 
 
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
 
-                Log.d("balasKeluhan", "onClick: "+firebaseUser.getUid());
+
+
+                //Log.d("balasKeluhan", "onClick: "+firebaseUser.getUid());
 
 
             }

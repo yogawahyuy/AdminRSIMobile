@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rsip.adminrsimoblie.R;
 
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Handler;
@@ -45,7 +47,7 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
 
     private ArrayList<AmbulanceKeluarModel> modelList = new ArrayList<>();
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Driver").child("MobilKeluar");
-    TextView emptyView;
+    LinearLayout linEmptyView;
 
 
 
@@ -55,7 +57,6 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_data_ambulance_keluar);
 
         findViews();
-        setAdapter();
 
 
     }
@@ -69,10 +70,10 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
                 startActivity(new Intent(DataAmbulanceKeluarActivity.this, TambahMobilKeluarActivity.class));
             }
         });
-        emptyView=findViewById(R.id.empty_view);
-        emptyView.setVisibility(View.GONE);
+        linEmptyView=findViewById(R.id.lin_emptyView);
+        linEmptyView.setVisibility(View.GONE);
         getDataFromFirebase();
-        progresDialog();
+
     }
 
 
@@ -122,31 +123,43 @@ public class DataAmbulanceKeluarActivity extends AppCompatActivity {
     }
 
     private void getDataFromFirebase(){
+        progresDialog();
+        Log.d("ambulance", "onDataChange: masuk sini");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    AmbulanceKeluarModel ambulanceKeluarModel=dataSnapshot.getValue(AmbulanceKeluarModel.class);
-                    ambulanceKeluarModel.setKey(dataSnapshot.getKey());
-                    if (ambulanceKeluarModel.getStatus().equalsIgnoreCase("Keluar")){
-                        modelList.add(ambulanceKeluarModel);
+
+                if (snapshot.exists()) {
+
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        AmbulanceKeluarModel ambulanceKeluarModel = dataSnapshot.getValue(AmbulanceKeluarModel.class);
+                        ambulanceKeluarModel.setKey(dataSnapshot.getKey());
+                        if (ambulanceKeluarModel.getStatus().equalsIgnoreCase("Keluar")) {
+                            modelList.add(ambulanceKeluarModel);
+                        }
+
+                        Log.d("ambulance", "onDataChange: " + ambulanceKeluarModel.getStatus());
+                        if (modelList.size() == 0) {
+                            linEmptyView.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
+                            progressDialog.dismiss();
+                        } else {
+                            linEmptyView.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+                            progressDialog.dismiss();
+                        }
+                        setAdapter();
                     }
-                    if (modelList.size()==0){
-                        emptyView.setVisibility(View.VISIBLE);
-                        recyclerView.setVisibility(View.GONE);
-                        progressDialog.dismiss();
-                    }else{
-                        emptyView.setVisibility(View.GONE);
-                        recyclerView.setVisibility(View.VISIBLE);
-                        progressDialog.dismiss();
-                    }
-                    setAdapter();
+                }else{
+                    progressDialog.dismiss();
+                    linEmptyView.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                linEmptyView.setVisibility(View.VISIBLE);
+                progressDialog.dismiss();
             }
         });
     }

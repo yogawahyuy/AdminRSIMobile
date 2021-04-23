@@ -59,6 +59,7 @@
 
         </RelativeLayout>
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/lin_SpinerUnit"
             android:layout_below="@id/rel_titlebed"
             android:layout_width="match_parent"

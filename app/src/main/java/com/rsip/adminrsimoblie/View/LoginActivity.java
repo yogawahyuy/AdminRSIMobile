@@ -27,6 +27,8 @@ import com.rsip.adminrsimoblie.MainActivity;
 import com.rsip.adminrsimoblie.R;
 import com.rsip.adminrsimoblie.Util.SharedPreferenceManager;
 
+import naseem.ali.flexibletoast.EasyToast;
+
 public class LoginActivity extends AppCompatActivity {
 
     MaterialEditText email,password;
@@ -48,12 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin=findViewById(R.id.btnlogin);
         dialogView=new CustomDialogView(this);
         sharedPreferenceManager=new SharedPreferenceManager(this);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                login();
-            }
-        });
+        btnLogin.setOnClickListener(v -> login());
         btnLogin.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -78,6 +75,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login(){
+        if(TextUtils.isEmpty(email.getText())||TextUtils.isEmpty(password.getText())){
+            EasyToast.makeText(LoginActivity.this,"Harap Isi Semua Kolom !!!",EasyToast.LENGTH_SHORT,EasyToast.WARNING,false).show();
+        }
         //reference= FirebaseDatabase.getInstance().getReference("UserAdmin").child(email.getText().toString());
         reference= FirebaseDatabase.getInstance().getReference("UserAdmin");
         reference.addValueEventListener(new ValueEventListener() {

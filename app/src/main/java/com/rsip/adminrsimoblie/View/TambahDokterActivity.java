@@ -46,7 +46,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import id.zelory.compressor.Compressor;
+//import id.zelory.compressor.Compressor;
 
 public class TambahDokterActivity extends AppCompatActivity {
 

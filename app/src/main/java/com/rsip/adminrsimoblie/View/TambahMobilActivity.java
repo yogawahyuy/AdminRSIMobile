@@ -7,21 +7,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rsip.adminrsimoblie.MainActivity;
 import com.rsip.adminrsimoblie.R;
 import com.rsip.adminrsimoblie.RecyclerView.DataMobilAmbulanceActivity;
+import com.rsip.adminrsimoblie.RecyclerView.DataMobilAmbulanceModel;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import java.util.Calendar;
 import java.util.HashMap;
+
+import naseem.ali.flexibletoast.EasyToast;
 
 public class TambahMobilActivity extends AppCompatActivity {
 
@@ -31,6 +37,8 @@ public class TambahMobilActivity extends AppCompatActivity {
 
     DatabaseReference dbRefrence;
 
+    Intent intent;
+    TextView textTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +47,7 @@ public class TambahMobilActivity extends AppCompatActivity {
     }
 
     private void findViews(){
+        intent=getIntent();
         plat=findViewById(R.id.edtTxt_plat);
         typeKendaraan=findViewById(R.id.edtTxt_type);
         pajakKendaraan=findViewById(R.id.edtTxt_pajak);
@@ -48,26 +57,24 @@ public class TambahMobilActivity extends AppCompatActivity {
         merekKendaraan=findViewById(R.id.edtTxt_merk);
         btnSimpan=findViewById(R.id.btn_simpan);
         spinner=findViewById(R.id.spinner);
-        pajakKendaraan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerPajak();
-            }
-        });
-        pajakPlatKendaraan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerPlat();
-            }
-        });
-
-        btnSimpan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        textTitle=findViewById(R.id.text_title);
+        pajakKendaraan.setOnClickListener(v -> showDatePickerPajak());
+        pajakPlatKendaraan.setOnClickListener(v -> showDatePickerPlat());
+        String cekNull=intent.getStringExtra("edit");
+        btnSimpan.setOnClickListener(v -> {
+            if(TextUtils.isEmpty(cekNull)){
                 addIntoFirebase();
+
+        }else {
+                editData();
             }
         });
 
+        if (TextUtils.isEmpty(cekNull)){
+
+        }else {
+            fillEditIntent();
+        }
     }
 
     private void showDatePickerPajak(){
@@ -100,14 +107,33 @@ public class TambahMobilActivity extends AppCompatActivity {
         datePickerDialog.show();
 
     }
+
+    private void fillEditIntent(){
+
+        Log.d("tambahmobil", "fillEditIntent: "+intent.getStringExtra("edit"));
+        Log.d("tambahmobil", "fillEditIntent: "+intent.getStringExtra("nopol"));
+        textTitle.setText("Edit Data Mobil");
+        plat.setText(intent.getStringExtra("nopol"));
+        typeKendaraan.setText(intent.getStringExtra("tipe"));
+        pajakKendaraan.setText(intent.getStringExtra("pajak"));
+        merekKendaraan.setText(intent.getStringExtra("merek"));
+        pajakPlatKendaraan.setText(intent.getStringExtra("plat"));
+        if (intent.getStringExtra("jenis").equalsIgnoreCase("0")){
+            spinner.setSelection(0);
+        }else{
+            spinner.setSelection(1);
+        }
+
+    }
     private void addIntoFirebase() {
         if (TextUtils.isEmpty(plat.getText().toString()) || TextUtils.isEmpty(typeKendaraan.getText().toString()) || TextUtils.isEmpty(pajakKendaraan.getText().toString()) || TextUtils.isEmpty(pajakPlatKendaraan.getText().toString())) {
             Toast.makeText(this, "Field diisi semua", Toast.LENGTH_SHORT).show();
         } else {
+            String jenisKen=String.valueOf(spinner.getSelectedItemPosition());
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
             HashMap<String, Object> hashMap = new HashMap<>();
             hashMap.put("NoPlat", plat.getText().toString());
-            hashMap.put("jenisKendaraan", spinner.getSelectedItem().toString());
+            hashMap.put("jenisKendaraan",jenisKen );
             hashMap.put("typeKendaraan", typeKendaraan.getText().toString());
             hashMap.put("pajakKendaraan", pajakKendaraan.getText().toString());
             hashMap.put("pajakPlatKendaraan", pajakPlatKendaraan.getText().toString());
@@ -121,5 +147,22 @@ public class TambahMobilActivity extends AppCompatActivity {
             finish();
         }
 
+    }
+
+    private void editData(){
+        String jenisKen=String.valueOf(spinner.getSelectedItemPosition());
+        dbRefrence=FirebaseDatabase.getInstance().getReference("Driver").child("DataMobil");
+        DataMobilAmbulanceModel dataMobilAmbulanceModel=new DataMobilAmbulanceModel();
+        dataMobilAmbulanceModel.setNoPlat(plat.getText().toString());
+        dataMobilAmbulanceModel.setJenisKendaraan(jenisKen);
+        dataMobilAmbulanceModel.setTypeKendaraan(typeKendaraan.getText().toString());
+        dataMobilAmbulanceModel.setPajakKendaraan(pajakKendaraan.getText().toString());
+        dataMobilAmbulanceModel.setPajakPlatKendaraan(pajakPlatKendaraan.getText().toString());
+        dataMobilAmbulanceModel.setMerekKendaraan(merekKendaraan.getText().toString());
+        dbRefrence.child(intent.getStringExtra("nopol")).setValue(dataMobilAmbulanceModel).addOnSuccessListener(aVoid -> {
+            startActivity(new Intent(TambahMobilActivity.this,DataMobilAmbulanceActivity.class));
+            finish();
+            EasyToast.makeText(TambahMobilActivity.this,"Data Berhasil diupdate",Toast.LENGTH_SHORT,EasyToast.SUCCESS,false).show();
+        });
     }
 }

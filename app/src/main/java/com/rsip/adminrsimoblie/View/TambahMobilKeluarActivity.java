@@ -51,8 +51,8 @@ import com.rsip.adminrsimoblie.RecyclerView.DataAmbulanceKeluarActivity;
 import com.rsip.adminrsimoblie.RecyclerView.DataMobilAmbulanceActivity;
 import com.rsip.adminrsimoblie.RecyclerView.DataMobilAmbulanceModel;
 import com.rsip.adminrsimoblie.Util.SharedPreferenceManager;
-import com.rtchagas.pingplacepicker.PingPlacePicker;
-import com.sucho.placepicker.PlacePicker;
+//import com.rtchagas.pingplacepicker.PingPlacePicker;
+//import com.sucho.placepicker.PlacePicker;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import java.lang.reflect.Array;
@@ -65,6 +65,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.TimeZone;
+
+import naseem.ali.flexibletoast.EasyToast;
 
 public class TambahMobilKeluarActivity extends AppCompatActivity {
 
@@ -112,33 +114,17 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
         getDateNow();
 
 
-        tujuan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //newPlacePicker();
-                //showPlacePicker();
-            }
+        tujuan.setOnClickListener(v -> {
+            //newPlacePicker();
+            //showPlacePicker();
         });
-        tanggal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePicker();
-            }
-        });
-        jam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showTimePicker();
-            }
-        });
-        btnSimpan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progresDialog();
-                getDateNowAutomatoc();
-                getTimeNowAutomatic();
-                addIntoFirebase();
-            }
+        tanggal.setOnClickListener(v -> showDatePicker());
+        jam.setOnClickListener(v -> showTimePicker());
+        btnSimpan.setOnClickListener(v -> {
+            progresDialog();
+            getDateNowAutomatoc();
+            getTimeNowAutomatic();
+            addIntoFirebase();
         });
     }
 
@@ -148,7 +134,12 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 posisi = position;
                 DataMobilAmbulanceModel dataMobilAmbulanceModel = modelList.get(position);
-                jenisKendaraan.setText(dataMobilAmbulanceModel.getJenisKendaraan());
+                if (dataMobilAmbulanceModel.getJenisKendaraan().equalsIgnoreCase("0")){
+                    jenisKendaraan.setText("Ambulance");
+                }else{
+                    jenisKendaraan.setText("Mobil Keluar");
+                }
+                //jenisKendaraan.setText(dataMobilAmbulanceModel.getJenisKendaraan());
                 merkKendaraan.setText(dataMobilAmbulanceModel.getMerekKendaraan());
             }
 
@@ -173,6 +164,9 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
                         titleList.add(dataMobilAmbulanceModel.getNoPlat());
                         Log.d("data", "onDataChange: keluar" + titleList.size());
                     } else {
+                        startActivity(new Intent(TambahMobilKeluarActivity.this,DataAmbulanceKeluarActivity.class));
+                        finish();
+                        EasyToast.makeText(TambahMobilKeluarActivity.this,"Tidak Bisa menambahkan \nMobil Sedang Keluar Semua !",EasyToast.LENGTH_LONG,EasyToast.ERROR,false).show();
                         Log.d("data", "onDataChange: masuk");
                     }
                 }
@@ -261,17 +255,17 @@ public class TambahMobilKeluarActivity extends AppCompatActivity {
         Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN, fields).build(this);
         startActivityForResult(intent, PLACE_PICKER_REQUEST);
     }
-    private void showPlacePicker(){
-        PingPlacePicker.IntentBuilder builder=new PingPlacePicker.IntentBuilder();
-        builder.setMapsApiKey("AIzaSyCPzqOBuv1DYkx6tsxmv0QaXWqX6fAfE5Q").setAndroidApiKey("AIzaSyCPzqOBuv1DYkx6tsxmv0QaXWqX6fAfE5Q");
-        try {
-            Intent placeIntent = builder.build(this);
-            startActivityForResult(placeIntent, PLACE_PICKER_REQUEST);
-        }
-        catch (Exception ex) {
-            Toast.makeText(this, "Google Play services is not available... ", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    private void showPlacePicker(){
+//        PingPlacePicker.IntentBuilder builder=new PingPlacePicker.IntentBuilder();
+//        builder.setMapsApiKey("AIzaSyCPzqOBuv1DYkx6tsxmv0QaXWqX6fAfE5Q").setAndroidApiKey("AIzaSyCPzqOBuv1DYkx6tsxmv0QaXWqX6fAfE5Q");
+//        try {
+//            Intent placeIntent = builder.build(this);
+//            startActivityForResult(placeIntent, PLACE_PICKER_REQUEST);
+//        }
+//        catch (Exception ex) {
+//            Toast.makeText(this, "Google Play services is not available... ", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

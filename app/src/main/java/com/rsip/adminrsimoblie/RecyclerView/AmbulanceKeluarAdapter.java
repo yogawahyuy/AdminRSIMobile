@@ -97,14 +97,7 @@ public class AmbulanceKeluarAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             this.itemTxtMessage = (TextView) itemView.findViewById(R.id.item_txt_message);
 
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mItemClickListener.onItemClick(itemView, getAdapterPosition(), modelList.get(getAdapterPosition()));
-
-
-                }
-            });
+            itemView.setOnClickListener(view -> mItemClickListener.onItemClick(itemView, getAdapterPosition(), modelList.get(getAdapterPosition())));
 
         }
     }

@@ -127,9 +127,9 @@ public class ListKeluhanActivity extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     KeluhanModel keluhanModel=dataSnapshot.getValue(KeluhanModel.class);
                     keluhanModel.setKey(dataSnapshot.getKey());
-                    if (status.equals(keluhanModel.getStatusBalas())) {
+//                    if (status.equals(keluhanModel.getStatusBalas())) {
                         modelList.add(keluhanModel);
-                    }
+                    //}
                     setAdapter();
                 }
             }

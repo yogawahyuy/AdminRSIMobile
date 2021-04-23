@@ -19,6 +19,10 @@ import android.view.View;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +37,11 @@ import android.os.Handler;
 
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.rsip.adminrsimoblie.Util.Koneksi;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class InfoDokterActivity extends AppCompatActivity {
@@ -99,25 +108,6 @@ public class InfoDokterActivity extends AppCompatActivity {
 
 
     private void setAdapter() {
-
-
-//        modelList.add(new DokterModel("Android", "Hello " + " Android"));
-//        modelList.add(new DokterModel("Beta", "Hello " + " Beta"));
-//        modelList.add(new DokterModel("Cupcake", "Hello " + " Cupcake"));
-//        modelList.add(new DokterModel("Donut", "Hello " + " Donut"));
-//        modelList.add(new DokterModel("Eclair", "Hello " + " Eclair"));
-//        modelList.add(new DokterModel("Froyo", "Hello " + " Froyo"));
-//        modelList.add(new DokterModel("Gingerbread", "Hello " + " Gingerbread"));
-//        modelList.add(new DokterModel("Honeycomb", "Hello " + " Honeycomb"));
-//        modelList.add(new DokterModel("Ice Cream Sandwich", "Hello " + " Ice Cream Sandwich"));
-//        modelList.add(new DokterModel("Jelly Bean", "Hello " + " Jelly Bean"));
-//        modelList.add(new DokterModel("KitKat", "Hello " + " KitKat"));
-//        modelList.add(new DokterModel("Lollipop", "Hello " + " Lollipop"));
-//        modelList.add(new DokterModel("Marshmallow", "Hello " + " Marshmallow"));
-//        modelList.add(new DokterModel("Nougat", "Hello " + " Nougat"));
-//        modelList.add(new DokterModel("Android O", "Hello " + " Android O"));
-
-
         mAdapter = new RecyclerViewAdapter(InfoDokterActivity.this, modelList);
 
         recyclerView.setHasFixedSize(true);
@@ -171,6 +161,30 @@ public class InfoDokterActivity extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(true);
         progressDialog.setCancelable(true);
         progressDialog.show();
+    }
+
+    private void getJadwalDokterAll(){
+        JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.POST, Koneksi.TAMPIL_ALL_JADWAL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                if (response.length()>0){
+                    try {
+                        JSONArray root=response.getJSONArray("response");
+                        for (int i = 0; i < root.length() ; i++) {
+                            JSONObject data=root.getJSONObject(i);
+                            
+                        }
+                    }catch (JSONException e){
+
+                    }
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
     }
 
 }

@@ -60,6 +60,23 @@
 
 
             </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_tambah_mobil_out"
+                android:layout_below="@id/rel_titlebed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="1dp"
+                android:elevation="8dp"
+                android:divider="@android:color/black"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                app:cardElevation="10dp"
+                app:cardPreventCornerOverlap="false"
+                android:layout_marginBottom="13dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="10dp">
             <LinearLayout
                 android:id="@+id/lin_container"
                 android:layout_below="@id/rel_titlebed"
@@ -221,9 +238,10 @@
                     android:layout_height="wrap_content"
                     android:text="Simpan"
                     android:background="@color/colorPrimaryDark"
-                    android:fontFamily="@font/bookmanoldstyle"/>
+                    android:fontFamily="@font/bookmanoldstyle"
+                    android:textColor="@android:color/white"/>
             </LinearLayout>
-            
+            </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </ScrollView>
 

@@ -56,7 +56,12 @@ public class DataMobilAmbulanceAdapter extends RecyclerView.Adapter<RecyclerView
             ViewHolder genericViewHolder = (ViewHolder) holder;
 
             genericViewHolder.itemTxtTitle.setText(model.getNoPlat());
-            genericViewHolder.itemTxtMessage.setText(model.getJenisKendaraan());
+            if (model.getJenisKendaraan().equalsIgnoreCase("0")){
+                genericViewHolder.itemTxtMessage.setText("Ambulance");
+            }else{
+                genericViewHolder.itemTxtMessage.setText("Mobil Umum");
+            }
+
 
 
         }

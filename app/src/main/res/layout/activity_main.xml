@@ -340,6 +340,7 @@
        android:background="@color/colorPrimaryDark"
        android:text="Keluar"
        android:layout_below="@id/rel_utama"
+       android:textColor="@android:color/white"
        android:gravity="center"/>
     </RelativeLayout>
 </ScrollView>
